@@ -26,6 +26,7 @@
   display: block;
 }
 
+/*
 .slide:nth-of-type(1) {
   background: #D7A151;
 }
@@ -41,6 +42,7 @@
 .slide:nth-of-type(4) {
   background: #D1D1D4;
 }
+*/
 
 .slide_buttons {
   left: 0;
@@ -61,9 +63,10 @@ a.slide_btn {
 }
 
 a.slide_btn.active, a.slide_btn:hover {
-  color: #428CC6;
+  color: #00baff;
   cursor: pointer;
 }
+
 
 .directional_nav {
   height: 340px;
@@ -75,7 +78,7 @@ a.slide_btn.active, a.slide_btn:hover {
 
 .previous_btn {
   bottom: 0;
-  left: 100px;
+  left: 50px;
   margin: auto;
   position: absolute;
   top: 0;
@@ -85,7 +88,7 @@ a.slide_btn.active, a.slide_btn:hover {
   bottom: 0;
   margin: auto;
   position: absolute;
-  right: 100px;
+  right: 50px;
   top: 0;
 }
 
@@ -105,11 +108,59 @@ a.slide_btn.active, a.slide_btn:hover {
   opacity: 1;
 }
 
+
+
+.slide img {
+    width: auto;
+    height: auto;
+    margin: auto;
+    max-height: 340px;
+    max-width: 940px;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
 @media only screen and (max-width: 767px) {
   .previous_btn {
-    left: 50px;
+    left: 0px;
+    width: 25%;
+    height: 25%;
   }
   .next_btn {
-    right: 50px;
+    right: 0px;
+      width: 25%;
+    height: 25%;
   }
+    
+    .slide img {
+    width: auto;
+    height: auto;
+    margin: auto;
+    max-width: 250px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+  .previous_btn {
+    left: 0px;
+    width: 25%;
+    height: 25%;
+  }
+  .next_btn {
+    right: 0px;
+      width: 25%;
+    height: 25%;
+  }
+    
+    .slide img {
+    width: auto;
+    height: auto;
+    margin: auto;
+    max-width: 450px;
+    }
 }
