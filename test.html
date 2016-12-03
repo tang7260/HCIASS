@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8">
     <title>Fri-dayoff</title>
-    <meta name="description" content="One page Bootstrap 4 theme to show What&#39;s new in Bootstrap 4. Discover new features like cards, the xl grid tier, em sizing and how to convert from Bootstrap 3." />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Codeply">
     <link rel="stylesheet" href="css/bootstrap-v4.0.0-alpha.4.min.css" />
@@ -13,6 +12,21 @@
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/slider.css" />
+    <style>
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #cfd3df;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: #343642;
+        }
+    </style>
 </head>
 
 <body class="bg-faded">
@@ -92,8 +106,8 @@
                     <li class="nav-item"> <a style="margin-top:20px; font-size: 13px;" id="li4" class="nav-link page-scroll" href="#four">CONTACT US</a> </li>
                 </ul>
                 <ul class="nav navbar-nav pull-xs-right">
-                   <li class="nav-item" > <a style="font-size: 15px; margin-top:20px; color:#07bc00;" class="nav-link page-scroll" data-toggle="modal" title="A free Bootstrap theme" href="#aboutModal">Sign Up</i></a></li>
-                   <li class="nav-item" > <a style="font-size: 15px; margin-top:20px;" class="nav-link page-scroll" data-toggle="modal" title="A free Bootstrap theme" href="#aboutModal">Sign In</i></a></li>
+                   <li class="nav-item" > <a style="font-size: 15px; margin-top:20px; color:#07bc00;" class="nav-link page-scroll" href="signin.html?action=signup">Sign Up</a></li>
+                   <li class="nav-item" > <a style="font-size: 15px; margin-top:20px;" class="nav-link page-scroll"  href="signin.html">Sign In</a></li>
                     <li class="nav-item" > <a style="font-size: 20px;" class="nav-link page-scroll" data-toggle="modal" title="A free Bootstrap theme" href="#aboutModal"><i style="font-size:40px; color:crimson;" class="ion-ios-cart wow fadeIn"></i><span></span></a></li>
                 </ul>
             </div>
@@ -500,58 +514,7 @@
             </div>
         </div>
     </section>
-    <aside class="bg-alt">
-        <div class="container text-xs-center">
-            <div class="call-to-action">
-                <h2 class="text-primary">Get Started</h2> <a href="http://www.bootstrapzero.com" target="ext" class="btn btn-primary-outline btn-lg wow flipInX text-uppercase">Free Download</a> </div>
-            <br>
-            <hr>
-            <br>
-            <div class="row">
-                <div class="col-lg-10 offset-lg-1">
-                    <div class="row">
-                        <h6 class="wide-space text-xs-center text-uppercase">Bootstrap is Built on these Standards</h6>
-                        <div class="col-sm-3 col-xs-6 text-xs-center"> <i class="icon-lg ion-social-html5-outline" title="html 5"></i> </div>
-                        <div class="col-sm-3 col-xs-6 text-xs-center"> <i class="icon-lg ion-social-sass" title="sass"></i> </div>
-                        <div class="col-sm-3 col-xs-6 text-xs-center"> <i class="icon-lg ion-social-javascript-outline" title="javascript"></i> </div>
-                        <div class="col-sm-3 col-xs-6 text-xs-center"> <i class="icon-lg ion-social-css3-outline" title="css 3"></i> </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </aside>
-    <section id="last">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2 text-xs-center">
-                    <h2 class="margin-top-0 wow fadeIn">Get in Touch</h2>
-                    <hr class="primary">
-                    <p>We love feedback. Fill out the form below and we'll get back to you as soon as possible.</p>
-                </div>
-                <div class="col-lg-10 offset-lg-1 text-xs-center">
-                    <form class="contact-form row">
-                        <div class="col-md-4">
-                            <label></label>
-                            <input type="text" class="form-control" placeholder="Name"> </div>
-                        <div class="col-md-4">
-                            <label></label>
-                            <input type="text" class="form-control" placeholder="Email"> </div>
-                        <div class="col-md-4">
-                            <label></label>
-                            <input type="text" class="form-control" placeholder="Phone"> </div>
-                        <div class="col-md-12">
-                            <label></label>
-                            <textarea class="form-control" rows="9" placeholder="Your message here.."></textarea>
-                        </div>
-                        <div class="col-md-4 offset-md-4">
-                            <label></label>
-                            <button type="button" data-toggle="modal" data-target="#alertModal" class="btn btn-primary btn-block btn-lg">Send <i class="ion-android-arrow-forward"></i></button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+
     <footer id="footer">
         <div class="container">
             <br> <span class="pull-right text-muted small"><a href="#">Made by BuyBestProduct Ltd</a> ©2016-2017 Company</span> 
