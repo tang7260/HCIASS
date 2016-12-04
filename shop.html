@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="css/bootstrap-v4.0.0-alpha.4.min.css" />
+<link href="css/animate.min.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+<link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="css/slider.css" />
+<style>
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: #cfd3df;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #343642;
+    }
+</style>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/tether.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/scripts.js"></script>
+<body>
+<nav id="topNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <button style="margin-top:20px;" class="navbar-toggler hidden-md-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar"> ☰ </button> <a style="font-size: 20px; margin-top:20px;"  class="navbar-brand page-scroll" href="test.html#first">Fri-dayoff</a>
+        <div class="collapse navbar-toggleable-sm" id="collapsingNavbar">
+            <ul class="nav navbar-nav">
+                <li class="nav-item"> <a style="margin-top:20px; font-size: 13px;" id="li1" class="nav-link page-scroll" href="shop.html">Shop</a> </li>
+                <li class="nav-item"> <a style="margin-top:20px; font-size: 13px;" id="li2" class="nav-link page-scroll" href="#two">IVE Exclusive offers</a></li>
+                <li class="nav-item"> <a style="margin-top:20px; font-size: 13px;" id="li3" class="nav-link page-scroll" href="#three">About</a> </li>
+                <li class="nav-item"> <a style="margin-top:20px; font-size: 13px;" id="li4" class="nav-link page-scroll" href="#four">CONTACT US</a> </li>
+            </ul>
+            <ul class="nav navbar-nav pull-xs-right">
+                <li class="nav-item" > <a style="font-size: 15px; margin-top:20px; color:#07bc00;" class="nav-link page-scroll" href="signin.html?action=signup">Sign Up</a></li>
+                <li class="nav-item" > <a style="font-size: 15px; margin-top:20px;" class="nav-link page-scroll"  href="signin.html">Sign In</a></li>
+                <li class="nav-item" > <a style="font-size: 20px;" class="nav-link page-scroll" data-toggle="modal" title="A free Bootstrap theme" href="#aboutModal"><i style="font-size:40px; color:crimson;" class="ion-ios-cart wow fadeIn"></i><span></span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,700|Merriweather' rel='stylesheet' type='text/css'>
+
+
+
+</body>
+<script>
+    $('#li1').hover(function(){
+        $('#li1').css("color","#0031ff");
+    },function(){
+        $('#li1').css("color","black");
+    });
+
+    $('#li2').hover(function(){
+        $('#li2').css("color","#d800ff");
+    },function(){
+        $('#li2').css("color","black");
+    });
+
+    $('#li3').hover(function(){
+        $('#li3').css("color","#ff0000");
+    },function(){
+        $('#li3').css("color","black");
+    });
+
+    $('#li4').hover(function(){
+        $('#li4').css("color","#ff9300");
+    },function(){
+        $('#li4').css("color","black");
+    });
+</script>
+</html>
