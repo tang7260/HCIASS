@@ -32,6 +32,7 @@
 <script src="js/jquery.easing.min.js"></script>
 <script src="js/wow.js"></script>
 <script src="js/scripts.js"></script>
+<script src="js/jquery-ui.min.js"></script>
 <body>
 <nav id="topNav" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -65,14 +66,17 @@
                 <span style="color:#ebebeb; font-size: 7px">Already have an account? <button id="goLeft" class="off">Login</button></span>
                 <form method="post" onsubmit="return false;">
                     <div class="form-group">
-                        <input type="text" placeholder="Username" />
-                        <input type="password" placeholder="Password" />
-                        <input type="password" placeholder="Confirm Password" /><br><br>
+                        <input type="text" placeholder="Username" id="usernames"/>
+                        <input type="password" placeholder="Password" id="passwords"/>
+                        <input type="password" placeholder="Confirm Password" id="cpassword"/>
+                        <br>
+                        <label id="notmatch" style="display: none; color: red" class="form-label">The password does not match</label>
+                        <br>
                         <label style="color: #959595" for="gender" class="form-label">Gender : </label>
                         <label style="color: #959595" class="form-label"><input type="radio" name="g" checked> Male  </label>
                         <label style="color: #959595" class="form-label"><input type="radio" name="g"> Female </label>
                         <br><br>
-                        <label style="color: #959595" for="idcard" class="form-label">Student ID card photo<input multiple type="file" id="upload" name="upload"  placeholder="Student ID card"/></label>
+                        <label style="color: #959595" for="idcard" class="form-label" id="idcardl">Student ID card photo<input multiple type="file" id="upload" name="upload"  placeholder="Student ID card"/></label>
                         <input list="campulist" type="text" id="campus" name="campus" placeholder="Your campus" />
                         <datalist id="campulist">
                             <option label="IVE (Tsing Yi)" value="Tsing Yi" />
@@ -85,8 +89,10 @@
                         </datalist><br><br>
                         <span style="color: #b0e1ef; font-size: small">More schools and departments will be supported soon</span>
                     </div>
+                    <label id="errors" style="display: none; color: red" class="form-label">The password does not match</label>
+                    <label id="noInputs" style="display: none; color: red" class="form-label">Please fill in the form</label>
                 </form>
-                <button>Sign up</button><br>
+                <button id="signupbtn">Sign up</button><br>
             </div>
         </div>
         <div class="right">
@@ -94,11 +100,13 @@
                 <h2>Login</h2>
                 <form method="post" onsubmit="return false;">
                     <div class="form-group">
-                        <label for="username" class="form-label">Username :</label>
+                        <label for="username" id="usernamel" class="form-label">Username :</label>
                         <input type="text" id="username"/>
-                        <label for="password" class="form-label">Password :</label>
-                        <input type="text" id="password"/>
+                        <label for="password" id="passwordl" class="form-label">Password :</label>
+                        <input type="password" id="password"/>
                     </div>
+                    <label id="error" style="display: none; color: red" class="form-label">Account or password incorrect</label>
+                    <label id="noInput" style="display: none; color: red" class="form-label">Please input your username and password</label>
                     <button id="goRight" class="off">Sign Up</button>
                     <button id="login" type="submit">Login</button>
                 </form>
@@ -177,8 +185,136 @@
             });
         });
 
+        $("#signupbtn").click(function () {
+            var usernamer = $('#usernames').val();
+            var password = $('#passwords').val();
+            var cpassword = $('#cpassword').val();
+            var idcard = $('#upload').val();
+            var campus = $('#campus').val();
+            var department = $('#departments').val();
+
+            if(usernamer==null || usernamer ==""){
+                $('#usernames').css("border-bottom","1px solid red");
+                $( "#usernames" ).effect( "shake" );
+            }
+            if(password==null || password ==""){
+                $('#passwords').css("border-bottom","1px solid red");
+                $( "#passwords" ).effect( "shake" );
+            }
+
+            if(cpassword==null || cpassword ==""){
+                $('#cpassword').css("border-bottom","1px solid red");
+                $( "#cpassword" ).effect( "shake" );
+            }
+
+            if(idcard==null || idcard ==""){
+                $('#upload').css("border-bottom","1px solid red");
+                $( "#upload" ).effect( "shake" );
+            }
+
+            if(campus==null || campus ==""){
+                $('#campus').css("border-bottom","1px solid red");
+                $( "#campus" ).effect( "shake" );
+            }
+
+            if(department==null || department ==""){
+                $('#departments').css("border-bottom","1px solid red");
+                $( "#departments" ).effect( "shake" );
+            }
+
+
+            if(usernamer==null || usernamer ==""
+            || password==null || password ==""
+            || cpassword==null || cpassword ==""
+            || idcard==null || idcard ==""
+            || campus==null || campus ==""
+            || department==null || department ==""){
+                $("#noInputs").fadeIn(2000);
+            }
+        });
+
+        $("#cpassword").on('input', function() {
+            var cpassword = $(this).val();
+            var password = $('#passwords').val();
+            if(cpassword != password){
+                $("#notmatch").show();
+                $('#passwords').css("border-bottom","1px solid red");
+                $('#cpassword').css("border-bottom","1px solid red");
+            }else{
+                $('#passwords').css("border-bottom","1px solid #45494C");
+                $('#cpassword').css("border-bottom","1px solid #45494C");
+                $("#notmatch").hide();
+            }
+        });
+
+        $("#passwords").on('input', function() {
+            var passwords = $(this).val();
+            if(passwords!=""){
+                $('#passwords').css("border-bottom","1px solid #45494C");
+                $("#noInputs").hide();
+                $('#error').hide();
+                $('#notmatch').hide();
+            }
+        });
+
+        $("#upload").on('input', function() {
+            var upload = $(this).val();
+            if(upload!=""){
+                $('#upload').css("border-bottom","1px solid #45494C");
+                $("#noInputs").hide();
+                $('#error').hide();
+                $('#notmatch').hide();
+            }
+        });
+
+        $("#campus").on('input', function() {
+            var campus = $(this).val();
+            if(campus!=""){
+                $('#campus').css("border-bottom","1px solid #45494C");
+                $("#noInputs").hide();
+                $('#error').hide();
+                $('#notmatch').hide();
+            }
+        });
+
+        $("#departments").on('input', function() {
+            var departments = $(this).val();
+            if(departments!=""){
+                $('#departments').css("border-bottom","1px solid #45494C");
+                $("#noInputs").hide();
+                $('#error').hide();
+                $('#notmatch').hide();
+            }
+        });
+
+        $("#usernames").on('input', function() {
+            var usernames = $(this).val();
+            if(usernames!=""){
+                $('#usernames').css("border-bottom","1px solid #45494C");
+                $("#noInputs").hide();
+                $('#error').hide();
+            }
+        });
+
+
+        $("#password").on('input', function() {
+            var password = $(this).val();
+            if(password!=""){
+                $('#passwordl').css("color","#959595");
+                $('#password').css("border-bottom","1px solid #45494C");
+                $("#noInput").hide();
+                $('#error').hide();
+            }
+        });
+
         $("#username").on('input', function() {
             var name = $(this).val();
+            if(name!=""){
+                $('#usernamel').css("color","#959595");
+                $('#username').css("border-bottom","1px solid #45494C");
+                $("#noInput").hide();
+                $('#error').hide();
+            }
             if(name == "syw"){
                 $(".backLeft").animate({
                     opacity: 0
@@ -259,9 +395,43 @@
             }
         });
 
+        $('#login').hover(function () {
+            var name = $('#username').val();
+            var password = $('#password').val();
+            if(name ==null || name ==""){
+                $('#usernamel').css("color","red");
+                $('#username').css("border-bottom","1px solid red");
+            }
+            if(password ==null || password ==""){
+                $('#passwordl').css("color","red");
+                $('#password').css("border-bottom","1px solid red");
+            }
+        },function () {
+
+        });
+
         $('#login').click(function () {
-            
-        })
+            var name = $('#username').val();
+            var password = $('#password').val();
+            if(name ==null || name ==""){
+                $("#noInput").fadeIn(2000);
+                $( "#username" ).effect( "shake" );
+                $( "#usernamel" ).effect( "shake" );
+
+            }
+            if(password ==null || password ==""){
+                $("#noInput").fadeIn(2000);
+                $( "#passwordl" ).effect( "shake" );
+                $( "#password" ).effect( "shake" );
+
+            } else if(password !="123"){
+                $("#error").fadeIn(2000);
+                $( "#passwordl" ).effect( "shake" );
+                $( "#password" ).effect( "shake" );
+                $( "#username" ).effect( "shake" );
+                $( "#usernamel" ).effect( "shake" );
+            }
+        });
     });
 </script>
 </html>
