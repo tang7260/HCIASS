@@ -15,6 +15,7 @@
     background-color: #ffffff;
     line-height: 1.6em;
     box-shadow: 10px 20px 40px -5px rgba(0,0,0,0.25);
+
 }
 .snip1268 * {
     -webkit-box-sizing: border-box;
@@ -24,6 +25,9 @@
 }
 .snip1268 .image {
     position: relative;
+    width: 310px;
+    height: 310px;
+
 }
 .snip1268 img {
     max-width: 100%;
@@ -32,6 +36,7 @@
     transition: opacity 0.35s;
     -webkit-transform: scale(1);
     transform: scale(1);
+    background-position: center;
 }
 .snip1268 .icons,
 .snip1268 .add-to-cart {
@@ -39,6 +44,7 @@
     left: 20px;
     right: 20px;
     opacity: 0;
+    margin: 10px;
 }
 
 .add-to-cart{

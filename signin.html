@@ -37,18 +37,18 @@
 <body>
 <nav id="topNav" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
-        <button style="margin-top:20px;" class="navbar-toggler hidden-md-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar"> ☰ </button> <a style="font-size: 20px; margin-top:20px;"  class="navbar-brand page-scroll" href="index.html#first">Fri-dayoff</a>
+        <button class="navbar-toggler hidden-md-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar"> ☰ </button> <a style="font-size: 20px;"  class="navbar-brand page-scroll" href="index.html#first">Fri-dayoff</a>
         <div class="collapse navbar-toggleable-sm" id="collapsingNavbar">
             <ul class="nav navbar-nav">
-                <li class="nav-item"> <a style="margin-top:20px; font-size: 13px;" id="li1" class="nav-link page-scroll" href="shop.html">Shop</a> </li>
-                <li class="nav-item"> <a style="margin-top:20px; font-size: 13px;" id="li2" class="nav-link page-scroll" href="index.html#two">IVE Exclusive offers</a></li>
-                <li class="nav-item"> <a style="margin-top:20px; font-size: 13px;" id="li3" class="nav-link page-scroll" href="index.html#three">About</a> </li>
-                <li class="nav-item"> <a style="margin-top:20px; font-size: 13px;" id="li4" class="nav-link page-scroll" href="index.html#four">CONTACT US</a> </li>
+                <li class="nav-item"> <a style="font-size: 13px;" id="li1" class="nav-link page-scroll" href="shop.html">Shop</a> </li>
+                <li class="nav-item"> <a style="font-size: 13px;" id="li2" class="nav-link page-scroll" href="index.html#two">IVE Exclusive offers</a></li>
+                <li class="nav-item"> <a style="font-size: 13px;" id="li3" class="nav-link page-scroll" href="index.html#three">About</a> </li>
+                <li class="nav-item"> <a style="font-size: 13px;" id="li4" class="nav-link page-scroll" href="index.html#four">CONTACT US</a> </li>
             </ul>
             <ul class="nav navbar-nav pull-xs-right">
-                <li class="nav-item" > <a style="font-size: 15px; margin-top:20px; color:#07bc00;" class="nav-link page-scroll" href="javascript:void(0)" id="signup">Sign Up</a></li>
-                <li class="nav-item" > <a style="font-size: 15px; margin-top:20px;" class="nav-link page-scroll"  href="javascript:void(0)" id="signin">Sign In</a></li>
-                <li class="nav-item" > <a style="font-size: 20px;" class="nav-link page-scroll" data-toggle="modal" title="A free Bootstrap theme" href="#aboutModal"><i style="font-size:40px; color:crimson;" class="ion-ios-cart wow fadeIn"></i><span></span></a></li>
+                <li class="nav-item" > <a style="font-size: 15px; color:#07bc00;" class="nav-link page-scroll" href="javascript:void(0)" id="signup">Sign Up</a></li>
+                <li class="nav-item" > <a style="font-size: 15px;" class="nav-link page-scroll"  href="javascript:void(0)" id="signin">Sign In</a></li>
+                <li class="nav-item" > <a style="font-size: 20px;"><i style="font-size:40px; color:crimson;" class="ion-ios-cart wow fadeIn"></i><span></span></a></li>
             </ul>
         </div>
     </div>
@@ -114,8 +114,6 @@
             </div>
         </div>
     </div>
-
-
 </div>
 
 </body>
@@ -401,32 +399,22 @@
             }
         });
 
-        $('#login').hover(function () {
-            var name = $('#username').val();
-            var password = $('#password').val();
-            if(name ==null || name ==""){
-                $('#usernamel').css("color","red");
-                $('#username').css("border-bottom","1px solid red");
-            }
-            if(password ==null || password ==""){
-                $('#passwordl').css("color","red");
-                $('#password').css("border-bottom","1px solid red");
-            }
-        },function () {
-
-        });
 
         $('#login').click(function () {
             var name = $('#username').val();
             var password = $('#password').val();
             if(name ==null || name ==""){
                 $("#noInput").fadeIn(2000);
+                $('#usernamel').css("color","red");
+                $('#username').css("border-bottom","1px solid red");
                 $( "#username" ).effect( "shake" );
                 $( "#usernamel" ).effect( "shake" );
 
             }
             if(password ==null || password ==""){
                 $("#noInput").fadeIn(2000);
+                $('#passwordl').css("color","red");
+                $('#password').css("border-bottom","1px solid red");
                 $( "#passwordl" ).effect( "shake" );
                 $( "#password" ).effect( "shake" );
 
