@@ -5,11 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="css/gift.css">
+    <link rel="stylesheet" href="css/bootstrap-v4.0.0-alpha.4.min.css" />
+    <link href="css/animate.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #cfd3df;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: #343642;
+        }
+    </style>
 </head>
 
 <body>
-   <div id="goods" class="goods">
-  <div id="product" class="product">
+<div>
+    <nav id="topNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <button class="navbar-toggler hidden-md-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar"> ☰ </button> <a style="font-size: 20px;"  class="navbar-brand page-scroll" href="index.html#first">Fri-dayoff</a>
+            <div class="collapse navbar-toggleable-sm" id="collapsingNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item"> <a style=" font-size: 13px;" id="li1" class="nav-link page-scroll" href="shop.html">Shop</a> </li>
+                    <li class="nav-item"> <a style=" font-size: 13px;" id="li2" class="nav-link page-scroll" href="index.html#two">IVE Exclusive offers</a></li>
+                    <li class="nav-item"> <a style=" font-size: 13px;" id="li3" class="nav-link page-scroll" href="index.html#three">About</a> </li>
+                    <li class="nav-item"> <a style="font-size: 13px;" id="li4" class="nav-link page-scroll" href="index.html#four">CONTACT US</a> </li>
+                </ul>
+                <ul class="nav navbar-nav pull-xs-right">
+                    <li class="nav-item" > <a style="font-size: 15px; color:#07bc00;" class="nav-link page-scroll" href="signin.html?action=signup">Sign Up</a></li>
+                    <li class="nav-item" > <a style="font-size: 15px; " class="nav-link page-scroll"  href="signin.html">Sign In</a></li>
+                    <li class="nav-item" id="shopping-cart" > <a style="font-size: 20px;" ><i style="font-size:40px; color:crimson;" class="ion-ios-cart wow fadeIn"></i><span></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="container" id="content" >
+    <div id="goods" class="goods" style="margin-top: 80px;">
+        <div id="product" class="product">
     <span id="info" class="info">
             	<div id="index">
             		<img src="img/gift1.png" alt="Picture" id="pic">
@@ -17,13 +57,12 @@
 				<span id="text" class="text">
 					<h2 id="name">IVE Coupon</h2>
 					<p class="description">You can use it as $26 in the canteen of cofee shop.</p>
-					
 					<span id="price">Bonus Point : <span id="num">200</span></span>
+                </span>
     </span>
-    </span>
-    <button>Get the gift</button>
-  </div>
-  <div id="product" class="product">
+            <button>Get the gift</button>
+        </div>
+        <div id="product" class="product">
     <span id="info" class="info">
             	<div id="index">
             		<img src="img/gift2.jpg" alt="Picture" id="pic">
@@ -31,13 +70,13 @@
 				<span id="text" class="text">
 					<h2 id="name">MUJI Notebook</h2>
 					<p class="description">This is MUJI Notebook, it is good for study.</p>
-					
+
 					<span id="price">Bonus Point : <span id="num">170</span></span>
     </span>
     </span>
-    <button>Get the gift</button>
-  </div>
-  <div id="product" class="product">
+            <button>Get the gift</button>
+        </div>
+        <div id="product" class="product">
     <span id="info" class="info">
             	<div id="index">
             		<img src="img/gift3.jpg">
@@ -45,24 +84,33 @@
 				<span id="text" class="text">
 					<h2 id="name">MUJI Pen</h2>
 					<p class="description">This is MUJI Pen, it's color is beautiful.</p>
-					
+
 					<span id="price">Bonus Point : <span id="num">140</span></span>
     </span>
     </span>
-    <button>Get the gift</button>
-  </div>
-  
-</div>
-<div id="cart" class="cart">
-  <h1>Gift Cart</h1>
-  <div id="all">
-  </div>
-  <div class="total">
-    <h2>Total</h2>
-    <span class="right price">Bonus Point : <span id="total"></span></span>
-  </div>
-  <button>Checkout</button>
+            <button>Get the gift</button>
+        </div>
+
+    </div>
+    <div id="cart" class="cart">
+        <h3 style="position: absolute; top: 80px;" >Gift Cart</h3>
+        <div id="all" style="margin-top: 85px;">
+        </div>
+        <div style="margin-top: -20px;" >
+            <div class="total">
+                <span class="right price">Total Bonus Point : <span id="total"></span></span>
+            </div>
+            <button >Checkout</button>
+        </div>
+    </div>
 </div>
 </body>
 <script src="js/gift.js"></script>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/tether.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/scripts.js"></script>
 </html>
