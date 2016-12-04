@@ -286,7 +286,49 @@ div#all {
 
 @media only screen and (min-width: 1025px) {
     .view-second a.info{
-        margin-top: 90px;
+        margin-top: 80px;
+    }
+}
+
+@media only screen and (min-width: 1380px) {
+    .view-second img {
+        max-width:  26vw;
+    }
+    .view-first img {
+        max-width:  30vw;
+    }
+    .view-tenth img {
+        max-width:  56vw;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .view-second a.info{
+        margin-top: 110px;
+    }
+}
+
+@media only screen and (min-width: 1160px) {
+    .view-second img {
+        max-width:  32vw;
+    }
+    .view-first img {
+        max-width:  36vw;
+    }
+    .view-tenth img {
+        max-width:  70vw;
+    }
+}
+
+@media only screen and (min-width: 860px) {
+    .view-second img {
+        max-width:  32vw;
+    }
+    .view-first img {
+        max-width:  36vw;
+    }
+    .view-tenth img {
+        max-width:  70vw;
     }
 }
 
