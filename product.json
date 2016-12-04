@@ -7,7 +7,7 @@
 		"description": "Advanced In-Ear Headphones SE215 SE is a limited product in Asia. It uses the moving coil unit and internal design to adjust and boost the air volume. Acoustic Resistance Screen is added to enhance the feeling and texture of the low frequency. In addition to the shell to blue, headset is also changed to dark gray, length shortened to 1.16m, with the Asian body shape and use habits, and the outer layer Kevlar reinforced fiber protection, and support for line design.",
 		"discount": "0.9",
 		"img": "img/1.jpg",
-		"VIP": "0",
+		"VIP": "IT",
 		"brand": "SHURE"
 	},
 	{
@@ -18,7 +18,7 @@
 		"description": "White Special Edition Advanced In-Ear Headphones The Shure SE215m + Special Edition is a white special edition of the SE215. The logo on the body turns to black and is equipped with a remote control and a microphone. With a micro-moving coil unit, adjustable soft rubber, the durable Kevlar® fiber-reinforced earphone cord can be removed, easily replaced and personalized to wear. Personalization and comfort Compact and ergonomic design, suitable for stage and daily use, even if the long wearing is also more comfortable. A variety of sizes and styles of earplugs, with different ear shape, fully meet the requirements of individual users. Shure unique sound insulation ear can effectively block the environmental noise, effectively reduce the noise from the outside world, regardless of noise or comfort level of first-class level.",
 		"discount": "0.9",
 		"img": "img/2.jpg",
-		"VIP": "1",
+		"VIP": "IT",
 		"brand": "SHURE"
 	},
 	{
@@ -29,7 +29,7 @@
 		"description": "In-Line Headphones Designed to enjoy high-quality sound, the SE315 features a balanced armature driver for a wider range of sounds. In addition, Tuned BassPort brings more bass sound effects. Anytime, anywhere to bring you extreme music world. The new version of the line is more to provide the function, the user can replace the high quality of wire, the user can for different types, music and replacement, flexibility can be greatly enhanced.",
 		"discount": "0.9",
 		"img": "img/3.jpg",
-		"VIP": "0",
+		"VIP": "IT",
 		"brand": "SHURE"
 	},
 	{
@@ -40,7 +40,7 @@
 		"description": "Fever-level three-element in-ear headphones SE535 equipped with a triple high-resolution micro-drive unit, with independent tweeter and dual woofers, creating a wide sound field and deep bass. It is the perfect choice for professionals and audio enthusiasts, suitable for in-ear personal monitoring and portable audio equipment. Detachable Kevlar ™ reinforced cable with adjustable soft glue for easy replacement and safety.",
 		"discount": "0.9",
 		"img": "img/4.jpg",
-		"VIP": "",
+		"VIP": "IT",
 		"brand": "SHURE"
 	},
 	{
@@ -51,7 +51,7 @@
 		"description": "Shure SE535 Limited Edition, in addition to eye-catching red appearance, the new version will switch to the new acoustic structure, so that some high-frequency part of the more prominent, compared to the traditional strong impression, high-frequency performance After the upgrade will be a new experience. Headset line, in line with the habits of users in Asia, the special version of the headset line will be adjusted to 1.16m, more convenient to use, but also to retain Kevlar reinforced fiber for protection.",
 		"discount": "0.9",
 		"img": "img/5.jpg",
-		"VIP": "",
+		"VIP": "IT",
 		"brand": "SHURE"
 	},
 	{
@@ -62,7 +62,7 @@
 		"description": "The ATH-E40 features specially designed housings that provide incredible isolation. The isolation – and the comfort – are enhanced by the four sizes of included silicone eartips (XS/S/M/L), which allow you to create a custom fit.",
 		"discount": "",
 		"img": "img/6.jpg",
-		"VIP": "",
+		"VIP": "IT",
 		"brand": "Audio-Technica"
 	},
 	{
@@ -73,7 +73,7 @@
 		"description": "The ATH-CKR10's unique push-pull driver system incorporates two 13mm drivers facing each other, generating phase-aligned audio signals that are mixed to compensate for each driver's infefficiencies, while providing an equal and tailored response without artificial colouration.",
 		"discount": "",
 		"img": "img/7.jpg",
-		"VIP": "",
+		"VIP": "IT",
 		"brand": "Audio-Technica"
 	},
 	{
@@ -84,7 +84,7 @@
 		"description": "Audio-Technica SonicFuel™ headphones are specifically designed for active, daily use, to power you forward by delivering extraordinary comfort, style and an immersive listening experience that never sounds artificial, processed or filtered. Just pure sonic goodness for the high-octane tempo of your life.",
 		"discount": "",
 		"img": "img/8.jpg",
-		"VIP": "",
+		"VIP": "IT",
 		"brand": "Audio-Technica"
 	},
 	{
@@ -95,7 +95,7 @@
 		"description": "It’s faster and more powerful than before, yet remarkably thinner and lighter. It has the brightest, most colorful Mac notebook display ever. And it introduces the Touch Bar — a Multi-Touch enabled strip of glass built into the keyboard for instant access to the tools you want, right when you want them. ",
 		"discount": "",
 		"img": "img/9.jpeg",
-		"VIP": "",
+		"VIP": "ALL",
 		"brand": "Apple"
 	},
 	{
@@ -106,7 +106,7 @@
 		"description": "Underneath the sleek exterior, MacBook Air is packed with powerful components that give you smoother graphics, faster storage, and all-around serious performance.",
 		"discount": "",
 		"img": "img/10.png",
-		"VIP": "",
+		"VIP": "ALL",
 		"brand": "Apple"
 	},
 	{
@@ -117,7 +117,7 @@
 		"description": "The Intel Core i5 processor provides powerful performance when using your favorite programs and apps, and the 1TB hard drive lets you store plenty of digital files. This HP convertible laptop rotates a full 360 degrees for customized viewing of the 15.6-inch screen.",
 		"discount": "",
 		"img": "img/11.jpg",
-		"VIP": "",
+		"VIP": "ALL",
 		"brand": "HP"
 	},
 	{
@@ -128,7 +128,7 @@
 		"description": "Take your projects or home entertainment wherever you go with this HP notebook. Store the latest movies on the 1TB hard drive and view them on the 17.3-inch backlit HD display. The 4GB of DDR4 RAM and a seventh-generation Intel Core i5 processor on this HP notebook handle multitasking efficiently.",
 		"discount": "",
 		"img": "img/12.jpg",
-		"VIP": "",
+		"VIP": "ALL",
 		"brand": "HP"
 	},
 	{
@@ -139,7 +139,7 @@
 		"description": "Unleash the power of modern computing with this Samsung Chromebook laptop. It has all the space you need with the 11.6-inch screen, which ensures portability, and 4GB of RAM and an Intel Celeron processor lets you complete basic office tasks all day long. ",
 		"discount": "",
 		"img": "img/13.jpg",
-		"VIP": "",
+		"VIP": "ALL",
 		"brand": "Samsung"
 	},
 	{
@@ -150,7 +150,7 @@
 		"description": "Satisfy your entertainment needs with this Samsung Notebook 7 Spin laptop. Watch HD movies and play 3-D games in video HDR mode for detail and texture that enhance your viewing experience. The NVIDIA GeForce 940MX graphics of this 15.6-inch Notebook 7 Spin laptop makes gaming and streaming movies more efficient without compromise.",
 		"discount": "",
 		"img": "img/14.jpg",
-		"VIP": "",
+		"VIP": "ALL",
 		"brand": "Samsung"
 	},
 	{
@@ -161,7 +161,7 @@
 		"description": "Get everyday computing wherever you with this Lenovo Ideapad 11.6-inch laptop. It includes 32GB of flash storage so that you can store basic files, and 2GB of RAM makes cloud computing a breeze. It also includes a dual-core Intel Celeron processor and Wi-Fi for easy connectivity from this Lenovo Ideapad 11.6-inch laptop.",
 		"discount": "",
 		"img": "img/15.jpg",
-		"VIP": "",
+		"VIP": "ALL",
 		"brand": "Lenovo"
 	},
 	{
@@ -172,7 +172,7 @@
 		"description": "Take this Lenovo Ideapad laptop with you on the road, and stay on top of work while keeping connected with clients and co-workers. Intel processing offers dependable speed for all of your programming, and Intel HD graphics provide stunning visuals. ",
 		"discount": "",
 		"img": "img/16.jpg",
-		"VIP": "",
+		"VIP": "ALL",
 		"brand": "Lenovo"
 	},
 	{
@@ -183,7 +183,7 @@
 		"description": "SINGLE, TAPER, PLUG & BOTTOMING ENGINEERING TOOLS MODEL",
 		"discount": "",
 		"img": "img/17.jpg",
-		"VIP": "",
+		"VIP": "Engineering",
 		"brand": "EW Equipment"
 	},
 	{
@@ -194,7 +194,7 @@
 		"description": "1/2",
 		"discount": "",
 		"img": "img/18.jpg",
-		"VIP": "",
+		"VIP": "Engineering",
 		"brand": "RDGTools HBM Myford"
 	},
 	{
@@ -205,7 +205,7 @@
 		"description": "drill suit Model Engineer",
 		"discount": "",
 		"img": "img/19.jpg",
-		"VIP": "",
+		"VIP": "Engineering",
 		"brand": "EW Equipment"
 	},
 	{
@@ -216,7 +216,7 @@
 		"description": "Set of tools",
 		"discount": "",
 		"img": "img/20.jpg",
-		"VIP": "",
+		"VIP": "Engineering",
 		"brand": "EW Equipment"
 	},
 	{
@@ -227,7 +227,7 @@
 		"description": "Thread Die 1/8 To 1/2 Whitworth Model Engineer Workshop Vintage Tool",
 		"discount": "",
 		"img": "img/21.jpg",
-		"VIP": "",
+		"VIP": "Engineering",
 		"brand": "EW Equipment"
 	},
 	{
@@ -238,7 +238,7 @@
 		"description": "TAP WRENCHES/ HOLD UP TO 5/16 INCH SQUARE.",
 		"discount": "",
 		"img": "img/22.jpg",
-		"VIP": "",
+		"VIP": "Engineering",
 		"brand": "EW Equipment"
 	},
 	{
@@ -249,7 +249,7 @@
 		"description": "DEBURRING TOOL WITH BLADES. DEBURRING TOOL AND 2 BLADES. OR SEE OUR OTHER 3700ENGINEERING TOOLS HERE.",
 		"discount": "",
 		"img": "img/23.jpg",
-		"VIP": "",
+		"VIP": "Engineering",
 		"brand": "EW Equipment"
 	},
 	{
@@ -260,7 +260,7 @@
 		"description": "All have been ground to a shape, minimum length 2.1/2",
 		"discount": "",
 		"img": "img/24.jpg",
-		"VIP": "",
+		"VIP": "Engineering",
 		"brand": "EW Equipment"
 	}
 ]
