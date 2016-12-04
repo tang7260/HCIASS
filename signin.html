@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Sign in to shopping</title>
@@ -8,19 +9,19 @@
 
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/signinsignup.css"/>
-    <link rel="stylesheet" href="css/popup.css"/>
+    <link rel="stylesheet" href="css/signinsignup.css" />
+    <link rel="stylesheet" href="css/popup.css" />
 </head>
 <style>
     .left::-webkit-scrollbar {
         width: 10px;
     }
-
+    
     .left::-webkit-scrollbar-track {
-        background-color:#5A5D66;
+        background-color: #5A5D66;
         border-radius: 10px;
     }
-
+    
     .left::-webkit-scrollbar-thumb {
         border-radius: 10px;
         background-color: #2094ff;
@@ -34,94 +35,104 @@
 <script src="js/wow.js"></script>
 <script src="js/scripts.js"></script>
 <script src="js/jquery-ui.min.js"></script>
+<script src="js/js.cookie.js"></script>
+
 <body>
-<nav id="topNav" class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <button class="navbar-toggler hidden-md-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar"> ☰ </button> <a style="font-size: 20px;"  class="navbar-brand page-scroll" href="index.html#first">Fri-dayoff</a>
-        <div class="collapse navbar-toggleable-sm" id="collapsingNavbar">
-            <ul class="nav navbar-nav">
-                <li class="nav-item"> <a style="font-size: 13px;" id="li1" class="nav-link page-scroll" href="shop.html">Shop</a> </li>
-                <li class="nav-item"> <a style="font-size: 13px;" id="li2" class="nav-link page-scroll" href="index.html#two">IVE Exclusive offers</a></li>
-                <li class="nav-item"> <a style="font-size: 13px;" id="li3" class="nav-link page-scroll" href="index.html#three">About</a> </li>
-                <li class="nav-item"> <a style="font-size: 13px;" id="li4" class="nav-link page-scroll" href="index.html#four">CONTACT US</a> </li>
-            </ul>
-            <ul class="nav navbar-nav pull-xs-right">
-                <li class="nav-item" > <a style="font-size: 15px; color:#07bc00;" class="nav-link page-scroll" href="javascript:void(0)" id="signup">Sign Up</a></li>
-                <li class="nav-item" > <a style="font-size: 15px;" class="nav-link page-scroll"  href="javascript:void(0)" id="signin">Sign In</a></li>
-                <li class="nav-item" > <a style="font-size: 20px;"><i style="font-size:40px; color:crimson;" class="ion-ios-cart wow fadeIn"></i><span></span></a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<div id="back">
-    <div class="backRight"></div>
-    <div class="backLeft"></div>
-</div>
-
-<div id="slideBox">
-    <div class="topLayer">
-        <div class="left">
-            <div class="content">
-                <h2>Sign Up</h2>
-                <span style="color:#ebebeb; font-size: 7px">Already have an account? <button id="goLeft" class="off">Login</button></span>
-                <form method="post" onsubmit="return false;">
-                    <div class="form-group">
-                        <input type="text" placeholder="Username" id="usernames"/>
-                        <input type="password" placeholder="Password" id="passwords"/>
-                        <input type="password" placeholder="Confirm Password" id="cpassword"/>
-                        <br>
-                        <label id="notmatch" style="display: none; color: red" class="form-label">The password does not match</label>
-                        <br>
-                        <label style="color: #959595" for="gender" class="form-label">Gender : </label>
-                        <label style="color: #959595" class="form-label"><input type="radio" name="g" checked> Male  </label>
-                        <label style="color: #959595" class="form-label"><input type="radio" name="g"> Female </label>
-                        <br><br>
-                        <label style="color: #959595" for="idcard" class="form-label" id="idcardl">Student ID card photo<input multiple type="file" id="upload" name="upload"  placeholder="Student ID card"/></label>
-                        <input list="campulist" type="text" id="campus" name="campus" placeholder="Your campus" />
-                        <datalist id="campulist">
-                            <option label="IVE (Tsing Yi)" value="Tsing Yi" />
-                            <option label="IVE (Tuen Mun)" value="Tuen Mun" />
-                        </datalist><br><br>
-                        <input list="departmentlist" type="text" id="departments" name="departments" placeholder="Your department" />
-                        <datalist id="departmentlist">
-                            <option label="Information Technology" value="IT" />
-                            <option label="Engineering" value="ENG" />
-                        </datalist><br><br>
-                        <span style="color: #b0e1ef; font-size: small">More schools and departments will be supported soon</span>
-                    </div>
-                    <label id="errors" style="display: none; color: red" class="form-label">The password does not match</label>
-                    <label id="noInputs" style="display: none; color: red" class="form-label">Please fill in the form</label>
-                </form>
-                <button id="signupbtn">Sign up</button><br>
+    <nav id="topNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <button class="navbar-toggler hidden-md-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar"> ☰ </button> <a style="font-size: 20px;" class="navbar-brand page-scroll" href="index.html#first">Fri-dayoff</a>
+            <div class="collapse navbar-toggleable-sm" id="collapsingNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item"> <a style="font-size: 13px;" id="li1" class="nav-link page-scroll" href="shop.html">Shop</a> </li>
+                    <li class="nav-item"> <a style="font-size: 13px;" id="li2" class="nav-link page-scroll" href="index.html#two">IVE Exclusive offers</a></li>
+                    <li class="nav-item"> <a style="font-size: 13px;" id="li3" class="nav-link page-scroll" href="index.html#three">About</a> </li>
+                    <li class="nav-item"> <a style="font-size: 13px;" id="li4" class="nav-link page-scroll" href="index.html#four">CONTACT US</a> </li>
+                </ul>
+                <ul class="nav navbar-nav pull-xs-right">
+                    <li class="nav-item"> <a style="font-size: 15px; color:#07bc00;" class="nav-link page-scroll" href="javascript:void(0)" id="signup">Sign Up</a></li>
+                    <li class="nav-item"> <a style="font-size: 15px;" class="nav-link page-scroll" href="javascript:void(0)" id="signin">Sign In</a></li>
+                    <li class="nav-item"> <a style="font-size: 20px;"><i style="font-size:40px; color:crimson;" class="ion-ios-cart wow fadeIn"></i><span></span></a></li>
+                </ul>
             </div>
         </div>
-        <div class="right">
-            <div class="content">
-                <h2>Login</h2>
-                <form method="post" onsubmit="return false;">
-                    <div class="form-group">
-                        <label for="username" id="usernamel" class="form-label">Username :</label>
-                        <input type="text" id="username"/>
-                        <label for="password" id="passwordl" class="form-label">Password :</label>
-                        <input type="password" id="password"/>
-                    </div>
-                    <label id="error" style="display: none; color: red" class="form-label">Account or password incorrect</label>
-                    <label id="noInput" style="display: none; color: red" class="form-label">Please input your username and password</label>
+    </nav>
+
+    <div id="back">
+        <div class="backRight"></div>
+        <div class="backLeft"></div>
+    </div>
+
+    <div id="slideBox">
+        <div class="topLayer">
+            <div class="left">
+                <div class="content">
+                    <h2>Sign Up</h2>
+                    <span style="color:#ebebeb; font-size: 7px">Already have an account? <button id="goLeft" class="off">Login</button></span>
+                    <form method="post" onsubmit="return false;">
+                        <div class="form-group">
+                            <input type="text" placeholder="Username" id="usernames" />
+                            <input type="password" placeholder="Password" id="passwords" />
+                            <input type="password" placeholder="Confirm Password" id="cpassword" />
+                            <br>
+                            <label id="notmatch" style="display: none; color: red" class="form-label">The password does not match</label>
+                            <br>
+                            <label style="color: #959595" for="gender" class="form-label">Gender : </label>
+                            <label style="color: #959595" class="form-label">
+                                <input type="radio" name="g" checked> Male </label>
+                            <label style="color: #959595" class="form-label">
+                                <input type="radio" name="g"> Female </label>
+                            <br>
+                            <br>
+                            <label style="color: #959595" for="idcard" class="form-label" id="idcardl">Student ID card photo
+                                <input multiple type="file" id="upload" name="upload" placeholder="Student ID card" />
+                            </label>
+                            <input list="campulist" type="text" id="campus" name="campus" placeholder="Your campus" />
+                            <datalist id="campulist">
+                                <option label="IVE (Tsing Yi)" value="Tsing Yi" />
+                                <option label="IVE (Tuen Mun)" value="Tuen Mun" />
+                            </datalist>
+                            <br>
+                            <br>
+                            <input list="departmentlist" type="text" id="departments" name="departments" placeholder="Your department" />
+                            <datalist id="departmentlist">
+                                <option label="Information Technology" value="IT" />
+                                <option label="Engineering" value="ENG" />
+                            </datalist>
+                            <br>
+                            <br>
+                            <span style="color: #b0e1ef; font-size: small">More schools and departments will be supported soon</span>
+                        </div>
+                        <label id="errors" style="display: none; color: red" class="form-label">The password does not match</label>
+                        <label id="noInputs" style="display: none; color: red" class="form-label">Please fill in the form</label>
+                    </form>
+                    <button id="signupbtn">Sign up</button>
+                    <br>
+                </div>
+            </div>
+            <div class="right">
+                <div class="content">
+                    <h2>Login</h2>
+                    <form method="post" onsubmit="return false;">
+                        <div class="form-group">
+                            <label for="username" id="usernamel" class="form-label">Username :</label>
+                            <input type="text" id="username" />
+                            <label for="password" id="passwordl" class="form-label">Password :</label>
+                            <input type="password" id="password" />
+                        </div>
+                        <label id="error" style="display: none; color: red" class="form-label">Account or password incorrect</label>
+                        <label id="noInput" style="display: none; color: red" class="form-label">Please input your username and password</label>
+
+                    </form>
                     <button id="goRight" class="off">Sign Up</button>
                     <button id="login" type="submit">Login</button>
-                </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 </body>
 <script>
-
-
-
-    $(document).ready(function(){
+    $(document).ready(function () {
 
         var getUrlParameter = function getUrlParameter(sParam) {
             var sPageURL = decodeURIComponent(window.location.search.substring(1)),
@@ -138,51 +149,51 @@
             }
         };
 
-        $('#li1').hover(function(){
-            $('#li1').css("color","#0031ff");
-        },function(){
-            $('#li1').css("color","black");
+        $('#li1').hover(function () {
+            $('#li1').css("color", "#0031ff");
+        }, function () {
+            $('#li1').css("color", "black");
         });
 
-        $('#li2').hover(function(){
-            $('#li2').css("color","#d800ff");
-        },function(){
-            $('#li2').css("color","black");
+        $('#li2').hover(function () {
+            $('#li2').css("color", "#d800ff");
+        }, function () {
+            $('#li2').css("color", "black");
         });
 
-        $('#li3').hover(function(){
-            $('#li3').css("color","#ff0000");
-        },function(){
-            $('#li3').css("color","black");
+        $('#li3').hover(function () {
+            $('#li3').css("color", "#ff0000");
+        }, function () {
+            $('#li3').css("color", "black");
         });
 
-        $('#li4').hover(function(){
-            $('#li4').css("color","#ff9300");
-        },function(){
-            $('#li4').css("color","black");
+        $('#li4').hover(function () {
+            $('#li4').css("color", "#ff9300");
+        }, function () {
+            $('#li4').css("color", "black");
         });
 
         var action = getUrlParameter("action");
-        if(action!=null && action == "signup"){
+        if (action != null && action == "signup") {
             $('#slideBox').animate({
-                'marginLeft' : '0'
+                'marginLeft': '0'
             });
             $('.topLayer').animate({
-                'marginLeft' : '100%'
+                'marginLeft': '100%'
             });
         }
 
-        $('#goRight, #signup').on('click', function(){
+        $('#goRight, #signup').on('click', function () {
             $('#slideBox').animate({
-                'marginLeft' : '0'
+                'marginLeft': '0'
             });
             $('.topLayer').animate({
-                'marginLeft' : '100%'
+                'marginLeft': '100%'
             });
         });
-        $('#goLeft, #signin').on('click', function(){
+        $('#goLeft, #signin').on('click', function () {
             $('#slideBox').animate({
-                'marginLeft' : '50%'
+                'marginLeft': '50%'
             });
             $('.topLayer').animate({
                 'marginLeft': '0'
@@ -197,129 +208,136 @@
             var campus = $('#campus').val();
             var department = $('#departments').val();
 
-            if(usernamer==null || usernamer ==""){
-                $('#usernames').css("border-bottom","1px solid red");
-                $( "#usernames" ).effect( "shake" );
+            if (usernamer == null || usernamer == "") {
+                $('#usernames').css("border-bottom", "1px solid red");
+                $("#usernames").effect("shake");
             }
-            if(password==null || password ==""){
-                $('#passwords').css("border-bottom","1px solid red");
-                $( "#passwords" ).effect( "shake" );
-            }
-
-            if(cpassword==null || cpassword ==""){
-                $('#cpassword').css("border-bottom","1px solid red");
-                $( "#cpassword" ).effect( "shake" );
+            if (password == null || password == "") {
+                $('#passwords').css("border-bottom", "1px solid red");
+                $("#passwords").effect("shake");
             }
 
-            if(idcard==null || idcard ==""){
-                $('#upload').css("border-bottom","1px solid red");
-                $( "#upload" ).effect( "shake" );
+            if (cpassword == null || cpassword == "") {
+                $('#cpassword').css("border-bottom", "1px solid red");
+                $("#cpassword").effect("shake");
             }
 
-            if(campus==null || campus ==""){
-                $('#campus').css("border-bottom","1px solid red");
-                $( "#campus" ).effect( "shake" );
+            if (idcard == null || idcard == "") {
+                $('#upload').css("border-bottom", "1px solid red");
+                $("#upload").effect("shake");
             }
 
-            if(department==null || department ==""){
-                $('#departments').css("border-bottom","1px solid red");
-                $( "#departments" ).effect( "shake" );
+            if (campus == null || campus == "") {
+                $('#campus').css("border-bottom", "1px solid red");
+                $("#campus").effect("shake");
+            }
+
+            if (department == null || department == "") {
+                $('#departments').css("border-bottom", "1px solid red");
+                $("#departments").effect("shake");
             }
 
 
-            if(usernamer==null || usernamer ==""
-            || password==null || password ==""
-            || cpassword==null || cpassword ==""
-            || idcard==null || idcard ==""
-            || campus==null || campus ==""
-            || department==null || department ==""){
+            if (usernamer == null || usernamer == "" || password == null || password == "" || cpassword == null || cpassword == "" || idcard == null || idcard == "" || campus == null || campus == "" || department == null || department == "") {
                 $("#noInputs").fadeIn(2000);
             }
         });
 
-        $("#cpassword").on('input', function() {
+        $("#cpassword").on('input', function () {
             var cpassword = $(this).val();
             var password = $('#passwords').val();
-            if(cpassword != password){
+            if (cpassword != password) {
                 $("#notmatch").show();
-                $('#passwords').css("border-bottom","1px solid red");
-                $('#cpassword').css("border-bottom","1px solid red");
-            }else{
-                $('#passwords').css("border-bottom","1px solid #45494C");
-                $('#cpassword').css("border-bottom","1px solid #45494C");
+                $('#passwords').css("border-bottom", "1px solid red");
+                $('#cpassword').css("border-bottom", "1px solid red");
+            } else {
+                $('#passwords').css("border-bottom", "1px solid #45494C");
+                $('#cpassword').css("border-bottom", "1px solid #45494C");
                 $("#notmatch").hide();
             }
         });
 
-        $("#passwords").on('input', function() {
+        $('#username').keydown(function (e) {
+            if (e.keyCode == 13) {
+                $('#login').click();
+            }
+        });
+
+        $('#password').keydown(function (e) {
+            if (e.keyCode == 13) {
+                $('#login').click();
+            }
+        });
+
+        $("#passwords").on('input', function () {
             var passwords = $(this).val();
-            if(passwords!=""){
-                $('#passwords').css("border-bottom","1px solid #45494C");
+            if (passwords != "") {
+                $('#passwords').css("border-bottom", "1px solid #45494C");
                 $("#noInputs").hide();
                 $('#error').hide();
                 $('#notmatch').hide();
             }
         });
 
-        $("#upload").on('input', function() {
+        $("#upload").on('input', function () {
             var upload = $(this).val();
-            if(upload!=""){
-                $('#upload').css("border-bottom","1px solid #45494C");
+            if (upload != "") {
+                $('#upload').css("border-bottom", "1px solid #45494C");
                 $("#noInputs").hide();
                 $('#error').hide();
                 $('#notmatch').hide();
             }
         });
 
-        $("#campus").on('input', function() {
+        $("#campus").on('input', function () {
             var campus = $(this).val();
-            if(campus!=""){
-                $('#campus').css("border-bottom","1px solid #45494C");
+            if (campus != "") {
+                $('#campus').css("border-bottom", "1px solid #45494C");
                 $("#noInputs").hide();
                 $('#error').hide();
                 $('#notmatch').hide();
             }
         });
 
-        $("#departments").on('input', function() {
+        $("#departments").on('input', function () {
             var departments = $(this).val();
-            if(departments!=""){
-                $('#departments').css("border-bottom","1px solid #45494C");
+            if (departments != "") {
+                $('#departments').css("border-bottom", "1px solid #45494C");
                 $("#noInputs").hide();
                 $('#error').hide();
                 $('#notmatch').hide();
             }
         });
 
-        $("#usernames").on('input', function() {
+        $("#usernames").on('input', function () {
             var usernames = $(this).val();
-            if(usernames!=""){
-                $('#usernames').css("border-bottom","1px solid #45494C");
+            if (usernames != "") {
+                $('#usernames').css("border-bottom", "1px solid #45494C");
                 $("#noInputs").hide();
                 $('#error').hide();
             }
         });
 
 
-        $("#password").on('input', function() {
+        $("#password").on('input', function () {
             var password = $(this).val();
-            if(password!=""){
-                $('#passwordl').css("color","#959595");
-                $('#password').css("border-bottom","1px solid #45494C");
+            if (password != "") {
+                $('#passwordl').css("color", "#959595");
+                $('#password').css("border-bottom", "1px solid #45494C");
                 $("#noInput").hide();
                 $('#error').hide();
             }
         });
 
-        $("#username").on('input', function() {
+        $("#username").on('input', function () {
             var name = $(this).val();
-            if(name!=""){
-                $('#usernamel').css("color","#959595");
-                $('#username').css("border-bottom","1px solid #45494C");
+            if (name != "") {
+                $('#usernamel').css("color", "#959595");
+                $('#username').css("border-bottom", "1px solid #45494C");
                 $("#noInput").hide();
                 $('#error').hide();
             }
-            if(name == "syw"){
+            if (name == "syw") {
                 $(".backLeft").animate({
                     opacity: 0
                 }, 'fast', function () {
@@ -331,7 +349,7 @@
                             opacity: 1
                         });
                 });
-            }else if(name == "peter"){
+            } else if (name == "peter") {
                 $(".backLeft").animate({
                     opacity: 0
                 }, 'fast', function () {
@@ -343,7 +361,7 @@
                             opacity: 1
                         });
                 });
-            }else if(name==""){
+            } else if (name == "") {
                 $(".backLeft").animate({
                     opacity: 0
                 }, 'fast', function () {
@@ -360,7 +378,7 @@
 
         $("#campus").bind('input', function () {
             var value = $(this).val();
-            if(value == "Tsing Yi"){
+            if (value == "Tsing Yi") {
                 $(".backRight").animate({
                     opacity: 0
                 }, 'fast', function () {
@@ -372,7 +390,7 @@
                             opacity: 1
                         });
                 });
-            }else if (value == "Tuen Mun"){
+            } else if (value == "Tuen Mun") {
                 $(".backRight").animate({
                     opacity: 0
                 }, 'fast', function () {
@@ -384,7 +402,7 @@
                             opacity: 1
                         });
                 });
-            }else{
+            } else {
                 $(".backRight").animate({
                     opacity: 0
                 }, 'fast', function () {
@@ -403,29 +421,91 @@
         $('#login').click(function () {
             var name = $('#username').val();
             var password = $('#password').val();
-            if(name ==null || name ==""){
+
+            if (name == null || name == "") {
                 $("#noInput").fadeIn(2000);
-                $('#usernamel').css("color","red");
-                $('#username').css("border-bottom","1px solid red");
-                $( "#username" ).effect( "shake" );
-                $( "#usernamel" ).effect( "shake" );
+                $('#usernamel').css("color", "red");
+                $('#username').css("border-bottom", "1px solid red");
+                $("#username").effect("shake");
+                $("#usernamel").effect("shake");
 
             }
-            if(password ==null || password ==""){
+            if (password == null || password == "") {
                 $("#noInput").fadeIn(2000);
-                $('#passwordl').css("color","red");
-                $('#password').css("border-bottom","1px solid red");
-                $( "#passwordl" ).effect( "shake" );
-                $( "#password" ).effect( "shake" );
+                $('#passwordl').css("color", "red");
+                $('#password').css("border-bottom", "1px solid red");
+                $("#passwordl").effect("shake");
+                $("#password").effect("shake");
 
-            } else if(password !="123"){
+            } else if (password != "123" || name != "syw" && name != "peter") {
                 $("#error").fadeIn(2000);
-                $( "#passwordl" ).effect( "shake" );
-                $( "#password" ).effect( "shake" );
-                $( "#username" ).effect( "shake" );
-                $( "#usernamel" ).effect( "shake" );
+                $("#passwordl").effect("shake");
+                $("#password").effect("shake");
+                $("#username").effect("shake");
+                $("#usernamel").effect("shake");
+            } else {
+                var account;
+                if (name == "syw") {
+                    var syw = {
+                        userName: "syw",
+                        bonusPoint: 200
+                    };
+                    if (typeof Cookies.get('account') == 'undefined') {
+                        account = [syw];
+                    } else {
+                        var addSyw = false;
+                        var oldAccount = Cookies.getJSON('account');
+                        for (i = 0; i < oldAccount.length; i++) {
+                            if (oldAccount[i].userName == "syw") {
+                                syw = oldAccount[i];
+                                account = oldAccount;
+                                addSyw = true;
+                                break;
+                            } else {
+                                account = oldAccount;
+                            }
+                        }
+                        if (!addSyw) {
+                            oldAccount.push(syw);
+                            account = oldAccount;
+                        }
+
+                    }
+                    Cookies.set('login', JSON.stringify(syw));
+                    Cookies.set('account', account);
+                } else if (name == "peter") {
+                    var peter = {
+                        userName: "peter",
+                        bonusPoint: 100
+                    };
+                    if (typeof Cookies.get('account') == 'undefined') {
+                        account = [peter];
+                    } else {
+                        var addPeter = false;
+                        var oldAccount = Cookies.getJSON('account');
+                        for (i = 0; i < oldAccount.length; i++) {
+                            if (oldAccount[i].userName == "peter") {
+                                peter = oldAccount[i];
+                                account = oldAccount;
+                                addPeter = true;
+                                break;
+                            } else {
+                                account = oldAccount;
+                            }
+                        }
+                        if (!addPeter) {
+                            oldAccount.push(peter);
+                            account = oldAccount;
+                        }
+
+                    }
+                    Cookies.set('login', JSON.stringify(peter));
+                    Cookies.set('account', account);
+                }
             }
+
         });
     });
 </script>
+
 </html>
