@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="css/styles.css" />
 <link rel="stylesheet" href="css/slider.css" />
 <link rel="stylesheet" href="css/shop.css">
-
+<link rel="stylesheet" href="css/search.css"/>
 <style>
 
     ::-webkit-scrollbar {
@@ -41,10 +41,23 @@
 
 <body>
 <div id="navHtml"></div>
+<form class="search_bar" style="margin-top: 90px;" onsubmit="return false;">
+    <div class="search_dropdown" style="width: 16px;">
+        <span>All</span>
+        <ul>
+            <li id="all" class="selected" >All</li>
+            <li id="earphone" >Earphone</li>
+            <li id="notebook" >NoteBook</li>
+            <li id="tools" >Tools</li>
+        </ul>
+    </div>
 
-    <div class="container wow fadeIn" style="margin-top: 120px;" id="showitem">
+    <input id="keyword" type="text" placeholder="Search for anything" />
+    <button id="search" type="submit" value="Search">Search</button>
+</form>
 
 
+    <div class="container wow fadeIn" style="margin-top: 50px;" id="showitem">
     </div>
 
 
@@ -53,6 +66,199 @@
     $(function(){
         $("#navHtml").load("nav.html");
     });
+
+    $("#search").click(function () {
+        var keyword = $("#keyword").val();
+        var type = $(".selected").text();
+        var str = "";
+        str.indexOf()
+        $("#showitem").html("");
+        if(type == "All"){
+            $.ajax({
+                type: 'POST',
+                url: "product.json",
+                dataType: 'json',
+                success: function (result) {
+                    tableString = "";
+                    i=0;
+                    $.each(result, function (row, value) {
+                        var i = value.name.indexOf(keyword);
+                        if(i == 0){
+                            tableString += "<figure class=\"snip1268 wow fadeIn\">\n" +
+                                "        <div class=\"image\">\n" +
+                                "            <img src=\"" + value.img + "\" alt=\"sq-sample15\"/>\n" +
+                                "            <a href=\"#\" class=\"add-to-cart\" onclick=\"goShoppingCart($(this))\">Add to Cart</a>\n" +
+                                "            <input class=\"itemId\" type=\"text\" value=\"" + value.id + "\" hidden>\n" +
+                                "        </div>\n" +
+                                "        <figcaption>\n" +
+                                "            <h2>" + value.name + "</h2>\n" +
+                                "            <p>" + value.description + "</p>\n" +
+                                "            <p>" + value.category + "</p>\n" +
+                                "            <div class=\"price\">$" + value.price + " </div>\n" +
+                                "        </figcaption>\n" +
+                                "    </figure>\n";
+                        }
+                    });
+                    $("#showitem").append(tableString);
+                }
+            });
+        }else{
+            $.ajax({
+                type: 'POST',
+                url: "product.json",
+                dataType: 'json',
+                success: function (result) {
+                    tableString = "";
+                    i=0;
+                    $.each(result, function (row, value) {
+                        var i = value.name.indexOf(keyword);
+                        if(i == 0){
+                            tableString += "<figure class=\"snip1268 wow fadeIn\">\n" +
+                                "        <div class=\"image\">\n" +
+                                "            <img src=\"" + value.img + "\" alt=\"sq-sample15\"/>\n" +
+                                "            <a href=\"#\" class=\"add-to-cart\" onclick=\"goShoppingCart($(this))\">Add to Cart</a>\n" +
+                                "            <input class=\"itemId\" type=\"text\" value=\"" + value.id + "\" hidden>\n" +
+                                "        </div>\n" +
+                                "        <figcaption>\n" +
+                                "            <h2>" + value.name + "</h2>\n" +
+                                "            <p>" + value.description + "</p>\n" +
+                                "            <p>" + value.category + "</p>\n" +
+                                "            <div class=\"price\">$" + value.price + " </div>\n" +
+                                "        </figcaption>\n" +
+                                "    </figure>\n";
+                        }
+                    });
+                    $("#showitem").append(tableString);
+                }
+            });
+        }
+    });
+
+    $('#all').click(function () {
+        $("#showitem").html("");
+        $.ajax({
+            type: 'POST',
+            url: "product.json",
+            dataType: 'json',
+            success: function (result) {
+                tableString = "";
+                i=0;
+                $.each(result, function (row, value) {
+                    tableString += "<figure class=\"snip1268 wow fadeIn\">\n" +
+                        "        <div class=\"image\">\n" +
+                        "            <img src=\"" + value.img + "\" alt=\"sq-sample15\"/>\n" +
+                        "            <a href=\"#\" class=\"add-to-cart\" onclick=\"goShoppingCart($(this))\">Add to Cart</a>\n" +
+                        "            <input class=\"itemId\" type=\"text\" value=\"" + value.id + "\" hidden>\n" +
+                        "        </div>\n" +
+                        "        <figcaption>\n" +
+                        "            <h2>" + value.name + "</h2>\n" +
+                        "            <p>" + value.description + "</p>\n" +
+                        "            <p>" + value.category + "</p>\n" +
+                        "            <div class=\"price\">$" + value.price + " </div>\n" +
+                        "        </figcaption>\n" +
+                        "    </figure>\n";
+                    console.log(tableString);
+
+
+                });
+                $("#showitem").append(tableString);
+            }
+        });
+    });
+
+    $('#earphone').click(function () {
+        $("#showitem").html("");
+        $.ajax({
+            type: 'POST',
+            url: "product.json",
+            dataType: 'json',
+            success: function (result) {
+                tableString = "";
+                i=0;
+                $.each(result, function (row, value) {
+                    if(value.category == "Earphone"){
+                        tableString += "<figure class=\"snip1268 wow fadeIn\">\n" +
+                            "        <div class=\"image\">\n" +
+                            "            <img src=\"" + value.img + "\" alt=\"sq-sample15\"/>\n" +
+                            "            <a href=\"#\" class=\"add-to-cart\" onclick=\"goShoppingCart($(this))\">Add to Cart</a>\n" +
+                            "            <input class=\"itemId\" type=\"text\" value=\"" + value.id + "\" hidden>\n" +
+                            "        </div>\n" +
+                            "        <figcaption>\n" +
+                            "            <h2>" + value.name + "</h2>\n" +
+                            "            <p>" + value.description + "</p>\n" +
+                            "            <p>" + value.category + "</p>\n" +
+                            "            <div class=\"price\">$" + value.price + " </div>\n" +
+                            "        </figcaption>\n" +
+                            "    </figure>\n";
+                    }
+                });
+                $("#showitem").append(tableString);
+            }
+        });
+    });
+
+    $('#tools').click(function () {
+        $("#showitem").html("");
+        $.ajax({
+            type: 'POST',
+            url: "product.json",
+            dataType: 'json',
+            success: function (result) {
+                tableString = "";
+                i=0;
+                $.each(result, function (row, value) {
+                    if(value.category == "Engineering Tools"){
+                        tableString += "<figure class=\"snip1268 wow fadeIn\">\n" +
+                            "        <div class=\"image\">\n" +
+                            "            <img src=\"" + value.img + "\" alt=\"sq-sample15\"/>\n" +
+                            "            <a href=\"#\" class=\"add-to-cart\" onclick=\"goShoppingCart($(this))\">Add to Cart</a>\n" +
+                            "            <input class=\"itemId\" type=\"text\" value=\"" + value.id + "\" hidden>\n" +
+                            "        </div>\n" +
+                            "        <figcaption>\n" +
+                            "            <h2>" + value.name + "</h2>\n" +
+                            "            <p>" + value.description + "</p>\n" +
+                            "            <p>" + value.category + "</p>\n" +
+                            "            <div class=\"price\">$" + value.price + " </div>\n" +
+                            "        </figcaption>\n" +
+                            "    </figure>\n";
+                    }
+                });
+                $("#showitem").append(tableString);
+            }
+        });
+    });
+
+    $('#notebook').click(function () {
+        $("#showitem").html("");
+        $.ajax({
+            type: 'POST',
+            url: "product.json",
+            dataType: 'json',
+            success: function (result) {
+                tableString = "";
+                i=0;
+                $.each(result, function (row, value) {
+                    if(value.category == "NoteBook"){
+                        tableString += "<figure class=\"snip1268 wow fadeIn\">\n" +
+                            "        <div class=\"image\">\n" +
+                            "            <img src=\"" + value.img + "\" alt=\"sq-sample15\"/>\n" +
+                            "            <a href=\"#\" class=\"add-to-cart\" onclick=\"goShoppingCart($(this))\">Add to Cart</a>\n" +
+                            "            <input class=\"itemId\" type=\"text\" value=\"" + value.id + "\" hidden>\n" +
+                            "        </div>\n" +
+                            "        <figcaption>\n" +
+                            "            <h2>" + value.name + "</h2>\n" +
+                            "            <p>" + value.description + "</p>\n" +
+                            "            <p>" + value.category + "</p>\n" +
+                            "            <div class=\"price\">$" + value.price + " </div>\n" +
+                            "        </figcaption>\n" +
+                            "    </figure>\n";
+                    }
+                });
+                $("#showitem").append(tableString);
+            }
+        });
+    });
+
 
     $(document).ready(function () {
         $.ajax({
@@ -73,6 +279,7 @@
                         "        <figcaption>\n" +
                         "            <h2>" + value.name + "</h2>\n" +
                         "            <p>" + value.description + "</p>\n" +
+                        "            <p>" + value.category + "</p>\n" +
                         "            <div class=\"price\">$" + value.price + " </div>\n" +
                         "        </figcaption>\n" +
                         "    </figure>\n";
@@ -242,6 +449,102 @@
             });
         }
     }
+
+
+    /* Search bar */
+
+    var resizeElements;
+
+    $(document).ready(function() {
+
+        // Set up common variables
+        // --------------------------------------------------
+
+        var bar = ".search_bar";
+        var input = bar + " input[type='text']";
+        var button = bar + " button[type='submit']";
+        var dropdown = bar + " .search_dropdown";
+        var dropdownLabel = dropdown + " > span";
+        var dropdownList = dropdown + " ul";
+        var dropdownListItems = dropdownList + " li";
+
+
+        // Set up common functions
+        // --------------------------------------------------
+
+        resizeElements = function() {
+            var barWidth = $(bar).outerWidth();
+
+            var labelWidth = $(dropdownLabel).outerWidth();
+            $(dropdown).width(labelWidth);
+
+            var dropdownWidth = $(dropdown).outerWidth();
+            var buttonWidth	= $(button).outerWidth();
+            var inputWidth = barWidth - dropdownWidth - buttonWidth;
+            var inputWidthPercent = inputWidth / barWidth * 100 + "%";
+
+            $(input).css({ 'margin-left': dropdownWidth, 'width': inputWidthPercent });
+        };
+
+        function dropdownOn() {
+            $(dropdownList).fadeIn(25);
+            $(dropdown).addClass("active");
+        }
+
+        function dropdownOff() {
+            $(dropdownList).fadeOut(25);
+            $(dropdown).removeClass("active");
+        }
+
+
+        // Initialize initial resize of initial elements
+        // --------------------------------------------------
+        resizeElements();
+
+
+        // Toggle new dropdown menu on click
+        // --------------------------------------------------
+
+        $(dropdown).click(function(event) {
+            if ($(dropdown).hasClass("active")) {
+                dropdownOff();
+            } else {
+                dropdownOn();
+            }
+
+            event.stopPropagation();
+            return false;
+        });
+
+        $("html").click(dropdownOff);
+
+
+        // Activate new dropdown option and show tray if applicable
+        // --------------------------------------------------
+
+        $(dropdownListItems).click(function() {
+            $(this).siblings("li.selected").removeClass("selected");
+            $(this).addClass("selected");
+
+            // Focus the input
+            $(this).parents("form.search_bar:first").find("input[type=text]").focus();
+
+            var labelText = $(this).text();
+            $(dropdownLabel).text(labelText);
+
+            resizeElements();
+
+        });
+
+
+        // Resize all elements when the window resizes
+        // --------------------------------------------------
+
+        $(window).resize(function() {
+            resizeElements();
+        });
+    });
+
 </script>
 
 </html>
