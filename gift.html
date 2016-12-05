@@ -4,11 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <link rel="stylesheet" href="css/gift.css">
+    
     <link rel="stylesheet" href="css/bootstrap-v4.0.0-alpha.4.min.css" />
     <link href="css/animate.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/gift.css">
     <style>
         ::-webkit-scrollbar {
             width: 10px;
@@ -60,7 +61,7 @@
 					<span id="price">Bonus Point : <span id="num">200</span></span>
                 </span>
     </span>
-            <button>Get the gift</button>
+            <button onclick="getGift(200)">Get the gift</button>
         </div>
         <div id="product" class="product">
     <span id="info" class="info">
@@ -74,7 +75,7 @@
 					<span id="price">Bonus Point : <span id="num">170</span></span>
     </span>
     </span>
-            <button>Get the gift</button>
+            <button onclick="getGift(170)">Get the gift</button>
         </div>
         <div id="product" class="product">
     <span id="info" class="info">
@@ -88,7 +89,7 @@
 					<span id="price">Bonus Point : <span id="num">140</span></span>
     </span>
     </span>
-            <button>Get the gift</button>
+            <button onclick="getGift(140)">Get the gift</button>
         </div>
 
     </div>
@@ -100,17 +101,33 @@
             <div class="total">
                 <span class="right price">Total Bonus Point : <span id="total"></span></span>
             </div>
-            <button >Checkout</button>
+            <button id="paygift" onclick="checkout($(this))">Checkout</button>
         </div>
     </div>
 </div>
 </body>
-<script src="js/gift.js"></script>
+
 <script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/tether.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/jquery.easing.min.js"></script>
 <script src="js/wow.js"></script>
+<script src="js/js.cookie.js"></script>
 <script src="js/scripts.js"></script>
+<!--<script src="js/gift.js"></script>-->
+<script>
+//    var checkout = function(element){
+//        window.location.href('shop.html');
+//    }
+    var getGift = function(price){
+        console.log(price);
+        var ac = Cookies.getJSON('login');
+        if(ac['bonusPoint'] > price){
+            alert("You get the gift !");
+        }else{
+            alert("Fail to get the gift !");
+        }
+    }
+</script>
 </html>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <header id="site-header">
     <div class="container">
-       <center>
-           <h1>Shopping cart </h1>
-       </center>
-        
+        <center>
+            <h1>Shopping cart </h1>
+        </center>
+
     </div>
     <!DOCTYPE html>
     <html lang="">
@@ -22,169 +22,194 @@
     </head>
 
     <body>
-    <div class="container">
-        <nav id="topNav" class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-                <button class="navbar-toggler hidden-md-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar"> ☰ </button> <a style="font-size: 20px;"  class="navbar-brand page-scroll" href="index.html#first">Fri-dayoff</a>
-                <div class="collapse navbar-toggleable-sm" id="collapsingNavbar">
-                    <ul class="nav navbar-nav">
-                        <li class="nav-item"> <a style=" font-size: 13px;" id="li1" class="nav-link page-scroll" href="shop.html">Shop</a> </li>
-                        <li class="nav-item"> <a style=" font-size: 13px;" id="li2" class="nav-link page-scroll" href="index.html#two">IVE Exclusive offers</a></li>
-                        <li class="nav-item"> <a style=" font-size: 13px;" id="li3" class="nav-link page-scroll" href="index.html#three">About</a> </li>
-                        <li class="nav-item"> <a style="font-size: 13px;" id="li4" class="nav-link page-scroll" href="index.html#four">CONTACT US</a> </li>
-                    </ul>
-                    <ul class="nav navbar-nav pull-xs-right">
-                        <li class="nav-item" > <a style="font-size: 15px; color:#07bc00;" class="nav-link page-scroll" href="signin.html?action=signup">Sign Up</a></li>
-                        <li class="nav-item" > <a style="font-size: 15px; " class="nav-link page-scroll"  href="signin.html">Sign In</a></li>
-                        <li class="nav-item" id="cartIcon" > <a style="font-size: 20px;" href="shoppingCart.html"><i style="font-size:40px; color:crimson;" class="ion-ios-cart wow fadeIn" ></i><span></span></a></li>
-                    </ul>
+        <div class="container">
+            <nav id="topNav" class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <button class="navbar-toggler hidden-md-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar"> ☰ </button> <a style="font-size: 20px;" class="navbar-brand page-scroll" href="index.html#first">Fri-dayoff</a>
+                    <div class="collapse navbar-toggleable-sm" id="collapsingNavbar">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item"> <a style=" font-size: 13px;" id="li1" class="nav-link page-scroll" href="shop.html">Shop</a> </li>
+                            <li class="nav-item"> <a style=" font-size: 13px;" id="li2" class="nav-link page-scroll" href="index.html#two">IVE Exclusive offers</a></li>
+                            <li class="nav-item"> <a style=" font-size: 13px;" id="li3" class="nav-link page-scroll" href="index.html#three">About</a> </li>
+                            <li class="nav-item"> <a style="font-size: 13px;" id="li4" class="nav-link page-scroll" href="index.html#four">CONTACT US</a> </li>
+                        </ul>
+                        <ul class="nav navbar-nav pull-xs-right">
+                            <li class="nav-item"> <a style="font-size: 15px; color:#07bc00;" class="nav-link page-scroll" href="signin.html?action=signup">Sign Up</a></li>
+                            <li class="nav-item"> <a style="font-size: 15px; " class="nav-link page-scroll" href="signin.html">Sign In</a></li>
+                            <li class="nav-item" id="cartIcon"> <a style="font-size: 20px;" href="shoppingCart.html"><i style="font-size:40px; color:crimson;" class="ion-ios-cart wow fadeIn" ></i><span></span></a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </div>
-
-    <div class="wrap cf">
-        <h1 class="projTitle">Responsive Table<span>-Less</span> Shopping Cart</h1>
-        <div class="heading cf">
-            <h1>My Cart</h1>
-            <a href="shop.html" class="continue">Continue Shopping</a>
+            </nav>
         </div>
-        <div class="cart">
-            <!--    <ul class="tableHead">
+
+        <div class="wrap cf">
+
+            <div class="heading cf">
+                <h1>My Cart</h1>
+                <a href="shop.html" class="continue">Continue Shopping</a>
+            </div>
+            <div class="cart">
+                <!--    <ul class="tableHead">
                   <li class="prodHeader">Product</li>
                   <li>Quantity</li>
                   <li>Total</li>
                    <li>Remove</li>
                 </ul>-->
-            <ul class="cartWrap">
-                <li class="items odd">
-                    <div class="infoWrap">
-                        <div class="cartSection">
-                            <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt="" class="itemImg" />
-                            <p class="itemNumber">#QUE-007544-002</p>
-                            <h3>Item Name 1</h3>
+                <ul class="cartWrap" id="cartWrap">
 
-                            <p> <input type="text"  class="qty" placeholder="3"/> x $5.00</p>
+                    <!--
+                    <li class="items even">
+                        <div class="infoWrap">
+                            <div class="cartSection info">
 
-                            <p class="stockStatus"> In Stock</p>
+                                <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt="" class="itemImg" />
+                                <p class="itemNumber">#QUE-007544-002</p>
+                                <h3>Item Name 1</h3>
+
+                                <p>
+                                    <input type="text" class="qty" placeholder="3" /> x $5.00</p>
+
+                                <p class="stockStatus"> In Stock</p>
+
+                            </div>
+
+
+                            <div class="prodTotal cartSection">
+                                <p>$15.00</p>
+                            </div>
+
+                            <div class="cartSection removeWrap">
+                                <a href="#" class="remove">x</a>
+                            </div>
                         </div>
-
-
-                        <div class="prodTotal cartSection">
-                            <p>$15.00</p>
+                        <div class="special">
+                            <div class="specialContent">Free gift with purchase!, gift wrap, etc!!</div>
                         </div>
-                        <div class="cartSection removeWrap">
-                            <a href="#" class="remove">x</a>
-                        </div>
-                    </div>
-                </li>
-                <li class="items even">
-
-                    <div class="infoWrap">
-                        <div class="cartSection">
-
-                            <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt="" class="itemImg" />
-                            <p class="itemNumber">#QUE-007544-002</p>
-                            <h3>Item Name 1</h3>
-
-                            <p> <input type="text"  class="qty" placeholder="3"/> x $5.00</p>
-
-                            <p class="stockStatus"> In Stock</p>
-                        </div>
+                    </li>
+-->
 
 
-                        <div class="prodTotal cartSection">
-                            <p>$15.00</p>
-                        </div>
-                        <div class="cartSection removeWrap">
-                            <a href="#" class="remove">x</a>
-                        </div>
-                    </div>
-                </li>
+                    <!--<li class="items even">Item 2</li>-->
 
-                <li class="items odd">
-                    <div class="infoWrap">
-                        <div class="cartSection">
+                </ul>
+            </div>
 
-                            <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt="" class="itemImg" />
-                            <p class="itemNumber">#QUE-007544-002</p>
-                            <h3>Item Name 1</h3>
+            <div class="subtotal cf">
+                <ul>
+                    <li class="totalRow"><span class="label">Subtotal</span><span class="value">$35.00</span></li>
 
-                            <p> <input type="text"  class="qty" placeholder="3"/> x $5.00</p>
+                    <li class="totalRow"><span class="label">Shipping</span><span class="value">$5.00</span></li>
 
-                            <p class="stockStatus out"> Out of Stock</p>
-                        </div>
-
-
-                        <div class="prodTotal cartSection">
-                            <p>$15.00</p>
-                        </div>
-                        <div class="cartSection removeWrap">
-                            <a href="#" class="remove">x</a>
-                        </div>
-                    </div>
-                </li>
-                <li class="items even">
-                    <div class="infoWrap">
-                        <div class="cartSection info">
-
-                            <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt="" class="itemImg" />
-                            <p class="itemNumber">#QUE-007544-002</p>
-                            <h3>Item Name 1</h3>
-
-                            <p> <input type="text"  class="qty" placeholder="3"/> x $5.00</p>
-
-                            <p class="stockStatus"> In Stock</p>
-
-                        </div>
-
-
-                        <div class="prodTotal cartSection">
-                            <p>$15.00</p>
-                        </div>
-
-                        <div class="cartSection removeWrap">
-                            <a href="#" class="remove">x</a>
-                        </div>
-                    </div>
-                    <div class="special"><div class="specialContent">Free gift with purchase!, gift wrap, etc!!</div></div>
-                </li>
-
-
-                <!--<li class="items even">Item 2</li>-->
-
-            </ul>
+                    <li class="totalRow"><span class="label">Tax</span><span class="value">$4.00</span></li>
+                    <li class="totalRow final"><span class="label">Total</span><span class="value">$44.00</span></li>
+                    <li class="totalRow"><a href="#" class="btn continue">Checkout</a></li>
+                </ul>
+            </div>
         </div>
-
-        <div class="subtotal cf">
-            <ul>
-                <li class="totalRow"><span class="label">Subtotal</span><span class="value">$35.00</span></li>
-
-                <li class="totalRow"><span class="label">Shipping</span><span class="value">$5.00</span></li>
-
-                <li class="totalRow"><span class="label">Tax</span><span class="value">$4.00</span></li>
-                <li class="totalRow final"><span class="label">Total</span><span class="value">$44.00</span></li>
-                <li class="totalRow"><a href="#" class="btn continue">Checkout</a></li>
-            </ul>
-        </div>
-    </div>
 
     </body>
 
     </html>
+    <script src="js/js.cookie.js"></script>
     <script>
+        $(document).ready(function () {
+            $.ajax({
+                type: 'POST',
+                url: "product.json",
+                dataType: 'json',
+                success: function (result) {
+                    tableString = "";
+                    i = 0;
+                    var items = Cookies.getJSON('shoppingCart');
+                    var discount = "";
+                    $.each(result, function (row, value) {
+                        for (i = 0; i < items.length; i++) {
+                            if (items[i] == value.id) {
+                                if(typeof Cookies.get('login') == 'undefined'){
+                                    discount = "";
+                                }else{
+                                     var user = Cookies.get('login');
+                                    if(user['userName'] == "syw"){
+                                        if(value.VIP == "IT" || value.VIP == "ALL"){
+                                            discount = "Discount";
+                                        }
+                                    }else{
+                                        if(value.VIP == "Engineering" || value.VIP == "ALL"){
+                                            discount = "Discount";
+                                        }
+                                    }
+                                }
+                                tableString += "<li class=\"items odd\">\n" +
+                                    "                    <div class=\"infoWrap\">\n" +
+                                    "                        <div class=\"cartSection\">\n" +
+                                    "\n" +
+                                    "                            <img src=\"" + value.img + "\" alt=\"\" class=\"itemImg\" />\n" +
+                                    //                            "                            <p class=\"itemNumber\">" + value.id + "</p>\n" +
+                                    "                            <h3>" + value.name + "</h3>\n" +
+                                    "\n" +
+                                    "                            <p> <input type=\"text\"  class=\"qty\" placeholder=\"1\" readonly/> x $" + value.price + "</p>\n" +
+                                    "\n" +
+                                    "                            <p class=\"stockStatus out\"> " + discount + "</p>\n" +
+                                    "                        </div>\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "                        <div class=\"prodTotal cartSection\">\n" +
+                                    "                            <p>$" + value.price + "</p>\n" +
+                                    "                        </div>\n" +
+                                    "                        <div class=\"cartSection removeWrap\">\n" +
+                                    "                            <a href=\"#\" class=\"remove\" onclick=\"remove($(this)," + value.id + ")\">x</a>\n" +
+//                                    "                            <input name=\"itemid\" type=\"text\" value=\"" + value.id + "\" hidden>\n" +
 
-        // Remove Items From Cart
-        $('a.remove').click(function(){
-            event.preventDefault();
-            $( this ).parent().parent().parent().hide( 400 );
+                                    "                        </div>\n" +
+                                    "                    </div>\n" +
+                                    "                </li>\n";
+                            }
+                        }
 
+                        console.log(tableString);
+
+
+                    });
+
+                    $("#cartWrap").append(tableString);
+                }
+            });
         });
+        // Remove Items From Cart
+//        $('a.remove').click(function () {
+//            event.preventDefault();
+//            $(this).parent().parent().parent().hide(400);
+//            var id = $(this).parent().find('.id').val();
+//            var items = Cookies.getJSON('shoppingCart');
+//            for(i=0;i<items.length;i++){
+//                if(id == items[i]){
+//                    items.splice(i,1);
+//                    break;
+//                }
+//            }
+//            Cookies.set('shoppingCart',items);
+//        });
 
+        var remove = function (element,id) {
+//            var id = element.parent('.cartSection removeWrap').find('.itemid').val();
+            
+            event.preventDefault();
+            element.parent().parent().parent().hide(400);
+            
+            console.log(id);
+            var items = Cookies.getJSON('shoppingCart');
+            for(i=0;i<items.length;i++){
+                if(id == items[i]){
+                    items.splice(i,1);
+                    break;
+                }
+            }
+            Cookies.set('shoppingCart',items);
+        }
         // Just for testing, show all items
-        $('a.btn.continue').click(function(){
+        $('a.btn.continue').click(function () {
             $('li.items').show(400);
         });
     </script>
 </header>
-

@@ -4,127 +4,44 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="http://codepen.io/jesperkc/pen/f177ba515fb47030457bd96ffb2f93b3.scss">
+<!--    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">-->
+<!--        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css">-->
 
     <link rel="stylesheet" href="try.css">
     
 <!--    <script src="../js/jquery-3.1.1.min.js"></script>-->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.1.1/js/tether.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/175382/jquery.card.js"></script>
-    <script src="http://codepen.io/jesperkc/pen/f177ba515fb47030457bd96ffb2f93b3.js?v=3"></script>
+<!--        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.1.1/js/tether.min.js"></script>-->
+<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>-->
+<!--    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/175382/jquery.card.js"></script>-->
+<!--    <script src="http://codepen.io/jesperkc/pen/f177ba515fb47030457bd96ffb2f93b3.js?v=3"></script>-->
 
 </head>
 
 <body>
-    <div class="btn-checkout">
-  <span class="fa fa-shopping-cart cart-icon"></span>
-  <span>continue to checkout</span>
-</div>
-<div class="checkout-form">
-  <div class="card-wrapper">
-  </div>
-  <div class="s10"></div>
-  <div class="form-container active">
-      <div class="row">
-        <div class="col-xs-12">
-          <input placeholder="Full name" type="text" name="name" class="form-control">
-        </div>
-      </div>
-      <div class="s10"></div>
-      <div class="row">
-        <div class="col-xs-12">
-          <input placeholder="Card number" type="text" name="number" class="form-control">
-        </div>
-      </div>
-      <div class="s10"></div>
-      <div class="row">
-        <div class="col-xs-6">
-          <input placeholder="MM/YY" type="text" name="expiry" class="form-control">
-        </div>
+   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
 
-        <div class="col-xs-6">
-          <input placeholder="CVC" type="text" name="cvc" class="form-control">
-        </div>
-      </div>
-      <div class="s10"></div>
-      <div class="row">
-
-        <div class="col-xs-12">
-          <input type="button" value="Continue" class="btn btn-submit postfix">
-        </div>
-      </div>
+<div class="container">
+  <h1 class="text-center">Bootstrap step-bar</h1>
+  <div class="row line">
+      <div class="col-xs-4 stepText1">Step 1</div>
+      <div class="col-xs-4 stepText2">Step 2</div>
+      <div class="col-xs-4 stepText3">Step 3</div>
   </div>
+  <div class="row">
+      <div class="col-xs-4"><div class="step step1 active"></div></div>
+      <div class="col-xs-4"><div class="step step2"></div></div>
+      <div class="col-xs-4"><div class="step step3"></div></div>  
+  </div> 
+  <div class="autoCenter">
+     <div id="prev">PREV STEP</div>
+     <div id="next">NEXT STEP</div>
+   </div>
 </div>
 
+ 
 
-<div class="overlay"></div>
-
-<div class="demo-container">
-  <div class="demo-container-inner">
-    <div class="container">
-
-      <h1>Awesome shop</h1>
-      <div class="row">
-        <div class="col-xs-6 col-md-4">
-          <div class="card">
-            <div class="card-block">
-              <h4 class="card-title">Cool product</h4>
-              <p class="card-text">Some quick example text to build on the card title.</p>
-            </div>
-            <div class="card-block">
-              <div class="pull-xs-right flipable">
-                <div class="flipable-group">
-                  <button class="btn btn-primary add-to-cart"><span class="fa fa-cart-plus"></span></button>
-                  <button class="btn btn-primary remove-from-cart"><span class="fa fa-check"></span></button>
-                </div>
-              </div>
-              <p class="card-text cart-price">59$</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-6 col-md-4">
-          <div class="card">
-            <div class="card-block">
-              <h4 class="card-title">Cool product</h4>
-              <p class="card-text">Some quick example text to build on the card title.</p>
-            </div>
-            <div class="card-block">
-              <div class="pull-xs-right flipable">
-                <div class="flipable-group">
-                  <button class="btn btn-primary add-to-cart"><span class="fa fa-cart-plus"></span></button>
-                  <button class="btn btn-primary remove-from-cart"><span class="fa fa-check"></span></button>
-                </div>
-              </div>
-              <p class="card-text cart-price">59$</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 hidden-sm-down">
-          <div class="card">
-            <div class="card-block">
-              <h4 class="card-title">Cool product</h4>
-              <p class="card-text">Some quick example text to build on the card title.</p>
-            </div>
-            <div class="card-block">
-              <div class="pull-xs-right flipable">
-                <div class="flipable-group">
-                  <button class="btn btn-primary add-to-cart"><span class="fa fa-cart-plus"></span></button>
-                  <button class="btn btn-primary remove-from-cart"><span class="fa fa-check"></span></button>
-                </div>
-              </div>
-              <p class="card-text cart-price">59$</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
 </body>
 <script src="try.js"></script>
 </html>
