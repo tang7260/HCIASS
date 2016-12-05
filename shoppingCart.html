@@ -97,13 +97,13 @@
 
             <div class="subtotal cf">
                 <ul>
-                    <li class="totalRow"><span class="label">Subtotal</span><span class="value">$35.00</span></li>
+<!--                    <li class="totalRow"><span class="label">Subtotal</span><span class="value">$35.00</span></li>-->
 
-                    <li class="totalRow"><span class="label">Shipping</span><span class="value">$5.00</span></li>
+<!--                    <li class="totalRow"><span class="label">Shipping</span><span class="value">$5.00</span></li>-->
 
-                    <li class="totalRow"><span class="label">Tax</span><span class="value">$4.00</span></li>
-                    <li class="totalRow final"><span class="label">Total</span><span class="value">$44.00</span></li>
-                    <li class="totalRow"><a href="#" class="btn continue">Checkout</a></li>
+<!--                    <li class="totalRow"><span class="label">Tax</span><span class="value">$4.00</span></li>-->
+                    <li class="totalRow final"><span class="label">Total</span><span class="value"></span></li>
+                    <li class="totalRow"><a href="payment.html" class="btn continue">Checkout</a></li>
                 </ul>
             </div>
         </div>
@@ -123,22 +123,37 @@
                     i = 0;
                     var items = Cookies.getJSON('shoppingCart');
                     var discount = "";
+                    var allPrice = 0 ;
+                    var thisPrice = 0;
+                    var user = Cookies.getJSON('login');
                     $.each(result, function (row, value) {
+                        var getprice = parseFloat(value.price);
                         for (i = 0; i < items.length; i++) {
                             if (items[i] == value.id) {
+//                                var realPrice = value.price;
                                 if(typeof Cookies.get('login') == 'undefined'){
                                     discount = "";
+                                    allPrice += getprice;
+                                    thisPrice = getprice;
                                 }else{
-                                     var user = Cookies.get('login');
+                                     
                                     if(user['userName'] == "syw"){
                                         if(value.VIP == "IT" || value.VIP == "ALL"){
                                             discount = "Discount";
+                                            allPrice += getprice * 0.9;
+                                            thisPrice = getprice * 0.9;
                                         }
-                                    }else{
+                                    }else if(user['userName'] == "peter"){
                                         if(value.VIP == "Engineering" || value.VIP == "ALL"){
                                             discount = "Discount";
+                                            allPrice += getprice * 0.9;
+                                            thisPrice = getprice * 0.9;
                                         }
-                                    }
+                                    }else{
+                                            discount = "";
+                                            allPrice += getprice;
+                                            thisPrice = getprice;
+                                        }
                                 }
                                 tableString += "<li class=\"items odd\">\n" +
                                     "                    <div class=\"infoWrap\">\n" +
@@ -158,7 +173,7 @@
                                     "                            <p>$" + value.price + "</p>\n" +
                                     "                        </div>\n" +
                                     "                        <div class=\"cartSection removeWrap\">\n" +
-                                    "                            <a href=\"#\" class=\"remove\" onclick=\"remove($(this)," + value.id + ")\">x</a>\n" +
+                                    "                            <a href=\"#\" class=\"remove\" onclick=\"remove($(this)," + value.id + "," + thisPrice + ")\">x</a>\n" +
 //                                    "                            <input name=\"itemid\" type=\"text\" value=\"" + value.id + "\" hidden>\n" +
 
                                     "                        </div>\n" +
@@ -167,12 +182,15 @@
                             }
                         }
 
-                        console.log(tableString);
+                        console.log(tableString + "total" + allPrice);
 
 
                     });
 
                     $("#cartWrap").append(tableString);
+                    $('.value').append(allPrice);
+                    Cookies.set('total',allPrice);
+                    console.log(user);
                 }
             });
         });
@@ -191,7 +209,7 @@
 //            Cookies.set('shoppingCart',items);
 //        });
 
-        var remove = function (element,id) {
+        var remove = function (element,id,price) {
 //            var id = element.parent('.cartSection removeWrap').find('.itemid').val();
             
             event.preventDefault();
@@ -202,6 +220,9 @@
             for(i=0;i<items.length;i++){
                 if(id == items[i]){
                     items.splice(i,1);
+                    $('.value').text(parseFloat($('.value').text()) - price);
+                    var set = parseFloat($('.value').text());
+                    Cookies.set('total',set);
                     break;
                 }
             }
