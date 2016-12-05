@@ -14,21 +14,21 @@
 <link rel="stylesheet" href="css/shop.css">
 
 <style>
-/*
+
     ::-webkit-scrollbar {
         width: 10px;
     }
-    
+
     ::-webkit-scrollbar-track {
         background-color: #cfd3df;
         border-radius: 10px;
     }
-    
+
     ::-webkit-scrollbar-thumb {
         border-radius: 10px;
         background-color: #343642;
     }
-*/
+
 </style>
 <script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/tether.min.js"></script>
@@ -53,13 +53,13 @@
                 <ul class="nav navbar-nav pull-xs-right">
                     <li class="nav-item"> <a style="font-size: 15px; color:#07bc00;" class="nav-link page-scroll" href="signin.html?action=signup">Sign Up</a></li>
                     <li class="nav-item"> <a style="font-size: 15px; " class="nav-link page-scroll" href="signin.html">Sign In</a></li>
-                    <li class="nav-item" id="shopping-cart"> <a style="font-size: 20px;"><i style="font-size:40px; color:crimson;" class="ion-ios-cart wow fadeIn"></i><span></span></a></li>
+                    <li class="nav-item" id="shopping-cart" > <a style="font-size: 20px;" href="shoppingCart.html"><i style="font-size:40px; color:crimson;" class="ion-ios-cart wow fadeIn" ></i></a><span></span></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container" style="margin-top: 120px;" id="showitem">
+    <div class="container wow fadeIn" style="margin-top: 120px;" id="showitem">
 
      
     </div>
@@ -77,7 +77,7 @@
                 i=0;
                 $.each(result, function (row, value) {
                     
-                    tableString += "<figure class=\"snip1268\">\n" +
+                    tableString += "<figure class=\"snip1268 wow fadeIn\">\n" +
                         "        <div class=\"image\">\n" +
                         "            <img src=\"" + value.img + "\" alt=\"sq-sample15\"/>\n" +
                         "            <a href=\"#\" class=\"add-to-cart\" onclick=\"goShoppingCart($(this))\">Add to Cart</a>\n" +

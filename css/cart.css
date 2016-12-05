@@ -2,16 +2,20 @@
 
 * {
     box-sizing: border-box;
+    -webkit-transition: all 1s ease; /* Safari and Chrome */
+    -moz-transition: all 1s ease; /* Firefox */
+    -ms-transition: all 1s ease; /* IE 9 */
+    -o-transition: all 1s ease; /* Opera */
+    transition: all 1s ease;
 }
 
-body {
-    color: #333;
-    -webkit-font-smoothing: antialiased;
-    font-family: "Droid Serif", serif;
-}
 
 img {
     max-width: 100%;
+}
+
+li{
+    list-style-type: none;
 }
 
 .cf:before, .cf:after {
@@ -33,6 +37,9 @@ img {
     margin: 0 auto;
     padding: 5% 0;
     margin-bottom: 5em;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Droid Serif", serif;
 }
 
 .projTitle {

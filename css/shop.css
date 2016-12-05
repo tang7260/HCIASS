@@ -1,14 +1,29 @@
 /* Icon set - http://ionicons.com */
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,700);
 @import url(http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+*{
+    -webkit-animation: fadeInScale 0.6s ease-in-out;
+    -moz-animation: fadeInScale 0.6s ease-in-out;
+    animation: fadeInScale 0.6s ease-in-out;
+}
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 .snip1268 {
     font-family: 'Raleway', Arial, sans-serif;
     position: relative;
     float: left;
-    overflow: hidden;
+    overflow: scroll;
     margin: 10px 1%;
     min-width: 220px;
     max-width: 310px;
+    height: 600px;
     width: 100%;
     color: #333333;
     text-align: center;
@@ -16,6 +31,11 @@
     line-height: 1.6em;
     box-shadow: 10px 20px 40px -5px rgba(0,0,0,0.25);
 
+}
+
+.snip1268::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
 }
 .snip1268 * {
     -webkit-box-sizing: border-box;

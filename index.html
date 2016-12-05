@@ -42,9 +42,12 @@
                 <li class="nav-item"> <a style="font-size: 13px;" id="li4" class="nav-link page-scroll" href="#four">CONTACT US</a> </li>
             </ul>
             <ul class="nav navbar-nav pull-xs-right">
+                <div id="logindiv">
+
+                </div>
                 <li class="nav-item" > <a style="font-size: 15px; color:#07bc00;" class="nav-link page-scroll" href="signin.html?action=signup">Sign Up</a></li>
                 <li class="nav-item" > <a style="font-size: 15px; " class="nav-link page-scroll"  href="signin.html">Sign In</a></li>
-                <li class="nav-item" id="cartIcon" > <a style="font-size: 20px;" ><i style="font-size:40px; color:crimson;" class="ion-ios-cart wow fadeIn"></i><span></span></a></li>
+                <li class="nav-item" id="cartIcon" > <a style="font-size: 20px;" href="shoppingCart.html"><i style="font-size:40px; color:crimson;" class="ion-ios-cart wow fadeIn" ></i><span></span></a></li>
             </ul>
         </div>
     </div>
@@ -286,6 +289,7 @@
 <script src="js/jquery.easing.min.js"></script>
 <script src="js/wow.js"></script>
 <script src="js/scripts.js"></script>
+<script src="js/js.cookie.js"></script>
 
 <script>
 $('#li1').hover(function(){
@@ -402,5 +406,17 @@ $('.slider').each(function() {
   
   advance();
 });
+
+$(document).ready(function () {
+    var cookies = Cookies.getJSON('login');
+    var username;
+    var bouns;
+    if(cookies!=null){
+        username = cookies['username'];
+        if(username!="" || username!=null){
+
+        }
+    }
+})
 </script>
 </html>
