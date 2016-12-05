@@ -101,7 +101,7 @@
 -->
                 <button id="PayButton" class="btn btn-block btn-success submit-button" type="submit">
                     <span class="submit-button-lock"></span>
-                    <span class="align-middle">Pay $</span>
+                    <a href="success.html"><span class="align-middle">Pay $</span></a>
                 </button>
             </form>
         </div>
@@ -130,5 +130,10 @@
     var abc = Cookies.get('total');
     $('#showto').text(abc);
     $('.align-middle').append(abc);
+    
+    $('.align-middle').onclick(function(){
+        Cookies.remove('shoppingCart');
+//        Cookies.remove('total');
+    });
 </script>
 </html>
