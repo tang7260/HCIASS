@@ -12,6 +12,15 @@
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/slider.css" />
     <link rel="stylesheet" href="css/img.css"/>
+
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/js.cookie.js"></script>
     <style>
         ::-webkit-scrollbar {
             width: 10px;
@@ -28,9 +37,51 @@
         }
     </style>
 </head>
+<script>
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length,c.length);
+            }
+        }
+        return "";
+    }
 
+    var logout = function () {
+        Cookies.set("login","");
+        window.location.href = 'signin.html';
+    };
+
+    $(document).ready(function () {
+        var cookies = Cookies.getJSON('login');
+        var username;
+        var bonusPoint;
+        if(cookies!=null){
+            username = cookies['userName'];
+            bonusPoint = getCookie("bp");
+            if(typeof username !="undefined"){
+                if(username!="" && username!=null){
+                    $('#logindiv').html("<li class=\"nav-item\" > <a style=\"font-size: 15px; color:#07bc00;\" class=\"nav-link page-scroll\" href=\"javascript:logout();\">Logout</a></li>\
+            <li class=\"nav-item\" ><a style=\"font-size: 15px; \" class=\"nav-link page-scroll\"  href=\"#\"> Hi , " + username +  "</a></li>" +
+                        "<li class=\"nav-item\" ><a style=\"font-size: 15px; color: #b06d0f \" class=\"nav-link page-scroll\"  href=\"#\">Bonus Point: " + bonusPoint +  "</a></li>" +
+                        "<li class=\"nav-item\" id=\"shopping-cart\" > <a style=\"font-size: 20px;\" href=\"shoppingCart.html\"><i style=\"font-size:40px; color:crimson;\" class=\"ion-ios-cart wow fadeIn\" ></i><span></span></a></li>");
+                    $('#li5').show();
+                }
+            }else{
+                $('#logindiv').html("<li class=\"nav-item\" > <a style=\"font-size: 15px; color:#07bc00;\" class=\"nav-link page-scroll\" href=\"signin.html?action=signup\">Sign Up</a></li>\
+            <li class=\"nav-item\" > <a style=\"font-size: 15px; \" class=\"nav-link page-scroll\"  href=\"signin.html\">Sign In</a></li>"
+                    + "<li class=\"nav-item\" id=\"cartIcon\" > <a style=\"font-size: 20px;\" href=\"shoppingCart.html\"><i style=\"font-size:40px; color:crimson;\" class=\"ion-ios-cart wow fadeIn\" ></i><span></span></a></li>");
+            }
+        }
+    });
+</script>
 <body class="bg-faded">
-
 <nav id="topNav" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <button class="navbar-toggler hidden-md-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar"> ☰ </button> <a style="font-size: 20px;"  class="navbar-brand page-scroll" href="#first">Fri-dayoff</a>
@@ -281,45 +332,7 @@
 </body>
 <!--scripts loaded here-->
 
-<script src="js/jquery-3.1.1.min.js"></script>
-<script src="js/tether.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery-ui.min.js"></script>
-<script src="js/jquery.easing.min.js"></script>
-<script src="js/wow.js"></script>
-<script src="js/scripts.js"></script>
-<script src="js/js.cookie.js"></script>
-
 <script>
-    var logout = function () {
-        Cookies.set("login","");
-//        var cookies = Cookies.getJSON('login');
-//        username = cookies['userName'];
-//        alert(username);
-        window.location.href = 'signin.html';
-    };
-
-    $(document).ready(function () {
-
-        var cookies = Cookies.getJSON('login');
-        var username;
-        var bonusPoint;
-        if(cookies!=null){
-            username = cookies['userName'];
-            bonusPoint = cookies['bonusPoint;'];
-            if(typeof username !="undefined"){
-                if(username!="" && username!=null){
-                    $('#logindiv').html("<li class=\"nav-item\" > <a style=\"font-size: 15px; color:#07bc00;\" class=\"nav-link page-scroll\" href=\"javascript:logout();\">Logout</a></li>\
-            <li class=\"nav-item\" ><a style=\"font-size: 15px; \" class=\"nav-link page-scroll\"  href=\"#\"> Hi , " + username +  "</a></li>" +
-                        "<li class=\"nav-item\" id=\"cartIcon\" > <a style=\"font-size: 20px;\" href=\"shoppingCart.html\"><i style=\"font-size:40px; color:crimson;\" class=\"ion-ios-cart wow fadeIn\" ></i><span></span></a></li>");
-                    $('#li5').show();
-                }
-            }else{
-                $('#logindiv').html("<li class=\"nav-item\" > <a style=\"font-size: 15px; color:#07bc00;\" class=\"nav-link page-scroll\" href=\"signin.html?action=signup\">Sign Up</a></li>\
-            <li class=\"nav-item\" > <a style=\"font-size: 15px; \" class=\"nav-link page-scroll\"  href=\"signin.html\">Sign In</a></li>" + "<li class=\"nav-item\" id=\"cartIcon\" > <a style=\"font-size: 20px;\" href=\"shoppingCart.html\"><i style=\"font-size:40px; color:crimson;\" class=\"ion-ios-cart wow fadeIn\" ></i><span></span></a></li>");
-            }
-        }
-    });
 $('#li1').hover(function(){
    $('#li1').css("color","#0031ff"); 
 },function(){
