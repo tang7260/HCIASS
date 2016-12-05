@@ -40,14 +40,13 @@
                 <li class="nav-item"> <a style=" font-size: 13px;" id="li2" class="nav-link page-scroll" href="#two">IVE Exclusive offers</a></li>
                 <li class="nav-item"> <a style=" font-size: 13px;" id="li3" class="nav-link page-scroll" href="#three">About</a> </li>
                 <li class="nav-item"> <a style="font-size: 13px;" id="li4" class="nav-link page-scroll" href="#four">CONTACT US</a> </li>
+                <li class="nav-item"> <a style="font-size: 13px; display: none;" id="li5" class="nav-link page-scroll" href="gift.html">gifts</a> </li>
             </ul>
             <ul class="nav navbar-nav pull-xs-right">
                 <div id="logindiv">
-
+                    <li class="nav-item" > <a style="font-size: 15px; color:#07bc00;" class="nav-link page-scroll" href="signin.html?action=signup">Sign Up</a></li>
+                    <li class="nav-item" > <a style="font-size: 15px; " class="nav-link page-scroll"  href="signin.html">Sign In</a></li>
                 </div>
-                <li class="nav-item" > <a style="font-size: 15px; color:#07bc00;" class="nav-link page-scroll" href="signin.html?action=signup">Sign Up</a></li>
-                <li class="nav-item" > <a style="font-size: 15px; " class="nav-link page-scroll"  href="signin.html">Sign In</a></li>
-                <li class="nav-item" id="cartIcon" > <a style="font-size: 20px;" href="shoppingCart.html"><i style="font-size:40px; color:crimson;" class="ion-ios-cart wow fadeIn" ></i><span></span></a></li>
             </ul>
         </div>
     </div>
@@ -292,6 +291,35 @@
 <script src="js/js.cookie.js"></script>
 
 <script>
+    var logout = function () {
+        Cookies.set("login","");
+//        var cookies = Cookies.getJSON('login');
+//        username = cookies['userName'];
+//        alert(username);
+        window.location.href = 'signin.html';
+    };
+
+    $(document).ready(function () {
+
+        var cookies = Cookies.getJSON('login');
+        var username;
+        var bonusPoint;
+        if(cookies!=null){
+            username = cookies['userName'];
+            bonusPoint = cookies['bonusPoint;'];
+            if(typeof username !="undefined"){
+                if(username!="" && username!=null){
+                    $('#logindiv').html("<li class=\"nav-item\" > <a style=\"font-size: 15px; color:#07bc00;\" class=\"nav-link page-scroll\" href=\"javascript:logout();\">Logout</a></li>\
+            <li class=\"nav-item\" ><a style=\"font-size: 15px; \" class=\"nav-link page-scroll\"  href=\"#\"> Hi , " + username +  "</a></li>" +
+                        "<li class=\"nav-item\" id=\"cartIcon\" > <a style=\"font-size: 20px;\" href=\"shoppingCart.html\"><i style=\"font-size:40px; color:crimson;\" class=\"ion-ios-cart wow fadeIn\" ></i><span></span></a></li>");
+                    $('#li5').show();
+                }
+            }else{
+                $('#logindiv').html("<li class=\"nav-item\" > <a style=\"font-size: 15px; color:#07bc00;\" class=\"nav-link page-scroll\" href=\"signin.html?action=signup\">Sign Up</a></li>\
+            <li class=\"nav-item\" > <a style=\"font-size: 15px; \" class=\"nav-link page-scroll\"  href=\"signin.html\">Sign In</a></li>" + "<li class=\"nav-item\" id=\"cartIcon\" > <a style=\"font-size: 20px;\" href=\"shoppingCart.html\"><i style=\"font-size:40px; color:crimson;\" class=\"ion-ios-cart wow fadeIn\" ></i><span></span></a></li>");
+            }
+        }
+    });
 $('#li1').hover(function(){
    $('#li1').css("color","#0031ff"); 
 },function(){
@@ -406,17 +434,5 @@ $('.slider').each(function() {
   
   advance();
 });
-
-$(document).ready(function () {
-    var cookies = Cookies.getJSON('login');
-    var username;
-    var bouns;
-    if(cookies!=null){
-        username = cookies['username'];
-        if(username!="" || username!=null){
-
-        }
-    }
-})
 </script>
 </html>

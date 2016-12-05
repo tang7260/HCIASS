@@ -51,9 +51,10 @@
                     <li class="nav-item"> <a style="font-size: 13px;" id="li4" class="nav-link page-scroll" href="index.html#four">CONTACT US</a> </li>
                 </ul>
                 <ul class="nav navbar-nav pull-xs-right">
-                    <li class="nav-item"> <a style="font-size: 15px; color:#07bc00;" class="nav-link page-scroll" href="signin.html?action=signup">Sign Up</a></li>
-                    <li class="nav-item"> <a style="font-size: 15px; " class="nav-link page-scroll" href="signin.html">Sign In</a></li>
-                    <li class="nav-item" id="shopping-cart" > <a style="font-size: 20px;" href="shoppingCart.html"><i style="font-size:40px; color:crimson;" class="ion-ios-cart wow fadeIn" ></i></a><span></span></li>
+                    <div id="logindiv">
+                        <li class="nav-item" > <a style="font-size: 15px; color:#07bc00;" class="nav-link page-scroll" href="signin.html?action=signup">Sign Up</a></li>
+                        <li class="nav-item" > <a style="font-size: 15px; " class="nav-link page-scroll"  href="signin.html">Sign In</a></li>
+                    </div>
                 </ul>
             </div>
         </div>
@@ -67,6 +68,32 @@
 
 </body>
 <script>
+    var logout = function () {
+        username = "";
+        Cookies.set('userName',username);
+        window.location.href = 'signin.html';
+    };
+
+    $(document).ready(function () {
+
+
+        var cookies = Cookies.getJSON('login');
+        var username;
+        var bonusPoint;
+        if(cookies!=null){
+            username = cookies['userName'];
+            bonusPoint = cookies['bonusPoint;'];
+            if(typeof username !="undefined" || username!=""){
+                $('#logindiv').html("<li class=\"nav-item\" > <a style=\"font-size: 15px; color:#07bc00;\" class=\"nav-link page-scroll\" href=\"javascript:logout();\">Logout</a></li>\
+            <li class=\"nav-item\" ><a style=\"font-size: 15px; \" class=\"nav-link page-scroll\"  href=\"#\"> Hi , " + username +  "</a></li>" +
+                    "<li class=\"nav-item\" id=\"shopping-cart\" > <a style=\"font-size: 20px;\" href=\"shoppingCart.html\"><i style=\"font-size:40px; color:crimson;\" class=\"ion-ios-cart wow fadeIn\" ></i><span></span></a></li>");
+            }else{
+                $('#logindiv').html("<li class=\"nav-item\" > <a style=\"font-size: 15px; color:#07bc00;\" class=\"nav-link page-scroll\" href=\"signin.html?action=signup\">Sign Up</a></li>\
+            <li class=\"nav-item\" > <a style=\"font-size: 15px; \" class=\"nav-link page-scroll\"  href=\"signin.html\">Sign In</a></li>" + "<li class=\"nav-item\" id=\"shopping-cart\" > <a style=\"font-size: 20px;\" href=\"shoppingCart.html\"><i style=\"font-size:40px; color:crimson;\" class=\"ion-ios-cart wow fadeIn\" ></i><span></span></a></li>");
+            }
+        }
+    });
+
     $(document).ready(function () {
         $.ajax({
             type: 'POST',
@@ -97,6 +124,8 @@
             }
         });
     });
+
+
     
     $('#li1').hover(function () {
         $('#li1').css("color", "#0031ff");
