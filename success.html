@@ -11,10 +11,10 @@
         <circle cx="38" cy="38" r="36"/>
         <path fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M17.7,40.9l10.9,10.9l28.7-28.7"/>
     </svg>
-        <h1 class="success-message__title">Message Received</h1>
-        <div class="success-message__content">
-            <p>We will respond in approximately 34 minutes</p>
-            <button style="margin-left: -10px" class="button-three">Back to home</button>
+    <h1 class="success-message__title">Pay Order Successful</h1>
+    <div class="success-message__content">
+        <p>Thank you for using us and expect you to visit again</p>
+        <button style="margin-left: -10px" id="back" class="button-three">Back to home</button>
     </div>
 
 </div>
@@ -63,16 +63,20 @@
         }, 1000);
     }
 
-//    document.addEventListener('click', function () {
-//
-//        if(document.body.classList.contains('active')) {
-//            document.body.classList.remove('active');
-//            svg.setProgress(0);
-//            return;
-//        }
-//        document.body.classList.add('active');
-//        svg.setProgress(1);
-//    });
+    $('#back').click(function () {
+        window.location.href = "index.html"
+    })
+
+    //    document.addEventListener('click', function () {
+    //
+    //        if(document.body.classList.contains('active')) {
+    //            document.body.classList.remove('active');
+    //            svg.setProgress(0);
+    //            return;
+    //        }
+    //        document.body.classList.add('active');
+    //        svg.setProgress(1);
+    //    });
 </script>
 
 

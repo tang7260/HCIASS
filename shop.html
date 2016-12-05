@@ -44,7 +44,7 @@
 
     <div class="container wow fadeIn" style="margin-top: 120px;" id="showitem">
 
-     
+
     </div>
 
 
@@ -63,7 +63,7 @@
                 tableString = "";
                 i=0;
                 $.each(result, function (row, value) {
-                    
+
                     tableString += "<figure class=\"snip1268 wow fadeIn\">\n" +
                         "        <div class=\"image\">\n" +
                         "            <img src=\"" + value.img + "\" alt=\"sq-sample15\"/>\n" +
@@ -77,8 +77,8 @@
                         "        </figcaption>\n" +
                         "    </figure>\n";
                     console.log(tableString);
-                    
-                   
+
+
                 });
                 $("#showitem").append(tableString);
             }
@@ -86,7 +86,7 @@
     });
 
 
-    
+
     $('#li1').hover(function () {
         $('#li1').css("color", "#0031ff");
     }, function () {
@@ -117,27 +117,27 @@
 //        console.log(getid);
 //        if (typeof Cookies.get('shoppingCart') == 'undefined'){
 //            shoppingCart = [getid];
-//            
+//
 //        }else{
 //            var added = false;
 //            var oldShoppingCart = Cookies.getJSON('shoppingCart');
 //            for (i = 0; i < oldShoppingCart.length; i++) {
-//                
+//
 //                            if (oldShoppingCart[i] == getid) {
 //                                console.log(oldShoppingCart[i]);
 //                                shoppingCart = oldShoppingCart;
 //                                added = true;
 //                                break;
-//                            } 
+//                            }
 //                        }if(!added){
 //                            oldShoppingCart.push(getid);
 //                            shoppingCart = oldShoppingCart;
 //                        }
-//            
+//
 //        }
 //        Cookies.set('shoppingCart',shoppingCart);
-////        
-//        
+////
+//
 //        var cart = $('#shopping-cart');
 //        var imgtodrag = $(this).parent('.image').find("img").eq(0);
 //
@@ -176,34 +176,34 @@
 //            });
 //        }
 //    });
-    
+
     var goShoppingCart = function (element) {
         var shoppingCart;
         var getid = element.parent('.image').find('.itemId').val();
         console.log(getid);
         if (typeof Cookies.get('shoppingCart') == 'undefined'){
             shoppingCart = [getid];
-            
+
         }else{
             var added = false;
             var oldShoppingCart = Cookies.getJSON('shoppingCart');
             for (i = 0; i < oldShoppingCart.length; i++) {
-                
+
                             if (oldShoppingCart[i] == getid) {
                                 console.log(oldShoppingCart[i]);
                                 shoppingCart = oldShoppingCart;
                                 added = true;
                                 break;
-                            } 
+                            }
                         }if(!added){
                             oldShoppingCart.push(getid);
                             shoppingCart = oldShoppingCart;
                         }
-            
+
         }
         Cookies.set('shoppingCart',shoppingCart);
-//        
-        
+//
+
         var cart = $('#shopping-cart');
         var imgtodrag = element.parent('.image').find("img").eq(0);
 

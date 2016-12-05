@@ -284,7 +284,7 @@
 
     <footer id="footer">
         <div class="container">
-            <br> <span class="pull-right text-muted small"><a href="#">Made by BuyBestProduct Ltd</a> ©2016-2017 Company</span> 
+            <br> <span class="pull-right text-muted small"><a href="#">Made by BuyBestProduct Ltd</a> ©2016-2017 Company</span>
         </div>
     </footer>
     <div id="galleryModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
@@ -334,30 +334,30 @@
 
 <script>
 $('#li1').hover(function(){
-   $('#li1').css("color","#0031ff"); 
+   $('#li1').css("color","#0031ff");
 },function(){
     $('#li1').css("color","black");
 });
-    
+
 $('#li2').hover(function(){
-   $('#li2').css("color","#d800ff"); 
+   $('#li2').css("color","#d800ff");
 },function(){
     $('#li2').css("color","black");
 });
-    
+
 $('#li3').hover(function(){
-   $('#li3').css("color","#ff0000"); 
+   $('#li3').css("color","#ff0000");
 },function(){
     $('#li3').css("color","black");
 });
-    
+
 $('#li4').hover(function(){
-   $('#li4').css("color","#ff9300"); 
+   $('#li4').css("color","#ff9300");
 },function(){
     $('#li4').css("color","black");
 });
 
-    
+
 $('.slider').each(function() {
   var $this = $(this);
   var $group = $this.find('.slide_group');
@@ -365,19 +365,19 @@ $('.slider').each(function() {
   var bulletArray = [];
   var currentIndex = 0;
   var timeout;
-  
+
   function move(newIndex) {
     var animateLeft, slideLeft;
-    
+
     advance();
-    
+
     if ($group.is(':animated') || currentIndex === newIndex) {
       return;
     }
-    
+
     bulletArray[currentIndex].removeClass('active');
     bulletArray[newIndex].addClass('active');
-    
+
     if (newIndex > currentIndex) {
       slideLeft = '100%';
       animateLeft = '-100%';
@@ -385,7 +385,7 @@ $('.slider').each(function() {
       slideLeft = '-100%';
       animateLeft = '100%';
     }
-    
+
     $slides.eq(newIndex).css({
       display: 'block',
       left: slideLeft
@@ -405,7 +405,7 @@ $('.slider').each(function() {
       currentIndex = newIndex;
     });
   }
-  
+
   function advance() {
     clearTimeout(timeout);
     timeout = setTimeout(function() {
@@ -416,7 +416,7 @@ $('.slider').each(function() {
       }
     }, 4000);
   }
-  
+
   $('.next_btn').on('click', function() {
     if (currentIndex < ($slides.length - 1)) {
       move(currentIndex + 1);
@@ -424,7 +424,7 @@ $('.slider').each(function() {
       move(0);
     }
   });
-  
+
   $('.previous_btn').on('click', function() {
     if (currentIndex !== 0) {
       move(currentIndex - 1);
@@ -432,10 +432,10 @@ $('.slider').each(function() {
       move(3);
     }
   });
-  
+
   $.each($slides, function(index) {
     var $button = $('<a class="slide_btn">&bull;</a>');
-    
+
     if (index === currentIndex) {
       $button.addClass('active');
     }
@@ -444,7 +444,7 @@ $('.slider').each(function() {
     }).appendTo('.slide_buttons');
     bulletArray.push($button);
   });
-  
+
   advance();
 });
 </script>

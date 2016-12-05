@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    
+
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
     <link rel="stylesheet" href="css/bootstrap-v4.0.0-alpha.4.min.css" />
     <link href="css/animate.min.css" rel="stylesheet" />
@@ -13,8 +13,8 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/payment.css">
-    
-    
+
+
 </head>
 <style>
     .left::-webkit-scrollbar {
@@ -84,7 +84,7 @@
 -->
                 <button id="PayButton" class="btn btn-block btn-success submit-button" type="submit">
                     <span class="submit-button-lock"></span>
-                    <a href="success.html"><span class="align-middle">Pay $</span></a>
+                    <a href="success.html"><span class="align-middle" id="pay">Pay $</span></a>
                 </button>
             </form>
         </div>
@@ -117,10 +117,12 @@
     var abc = Cookies.get('total');
     $('#showto').text(abc);
     $('.align-middle').append(abc);
-    
+
     $('.align-middle').onclick(function(){
         Cookies.remove('shoppingCart');
 //        Cookies.remove('total');
     });
+
+    $('')
 </script>
 </html>
