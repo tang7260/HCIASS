@@ -486,7 +486,7 @@
                         for (i = 0; i < oldAccount.length; i++) {
                             if (oldAccount[i].userName == "peter") {
                                 peter = oldAccount[i];
-                                account = oldAccount;oldShoppingCart
+                                account = oldAccount;
                                 addPeter = true;
                                 break;
                             } else {
@@ -502,8 +502,9 @@
                     Cookies.set('login', JSON.stringify(peter));
                     Cookies.set('account', account);
                 }
+                alert("Welcome back " + name);
+                window.location.href = "index.html";
             }
-
         });
     });
 </script>
