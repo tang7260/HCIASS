@@ -61,30 +61,7 @@
 
     <div class="container" style="margin-top: 120px;" id="showitem">
 
-     </figure><figure class="snip1268">
-        <div class="image">
-            <img src="img/24.jpg" alt="sq-sample15"/>
-            <a href="#" class="add-to-cart">Add to Cart</a>
-            <input class="itemId" type="text" value="5" hidden>
-        </div>
-        <figcaption>
-            <h2>10 x 1/2</h2>
-            <p>All have been ground to a shape, minimum length 2.1/2</p>
-            <div class="price">$120 </div>
-        </figcaption>
-    </figure>
-    <figure class="snip1268">
-        <div class="image">
-            <img src="img/23.jpg" alt="sq-sample15"/>
-            <a href="#" class="add-to-cart">Add to Cart</a>
-            <input class="itemId" type="text" value="23 " hidden>
-        </div>
-        <figcaption>
-            <h2>RDGTOOLS DEBURRING TOOL</h2>
-            <p>DEBURRING TOOL WITH BLADES. DEBURRING TOOL AND 2 BLADES. OR SEE OUR OTHER 3700ENGINEERING TOOLS HERE.</p>
-            <div class="price">$800 </div>
-        </figcaption>
-    </figure>
+     
     </div>
 
 
@@ -103,7 +80,7 @@
                     tableString += "<figure class=\"snip1268\">\n" +
                         "        <div class=\"image\">\n" +
                         "            <img src=\"" + value.img + "\" alt=\"sq-sample15\"/>\n" +
-                        "            <a href=\"#\" class=\"add-to-cart\">Add to Cart</a>\n" +
+                        "            <a href=\"#\" class=\"add-to-cart\" onclick=\"goShoppingCart($(this))\">Add to Cart</a>\n" +
                         "            <input class=\"itemId\" type=\"text\" value=\"" + value.id + "\" hidden>\n" +
                         "        </div>\n" +
                         "        <figcaption>\n" +
@@ -145,9 +122,75 @@
         $('#li4').css("color", "black");
     });
 
-    $('.add-to-cart').on('click', function () {
+//    $('.add-to-cart').on('click', function () {
+//        var shoppingCart;
+//        var getid = $(this).parent('.image').find('.itemId').val();
+//        console.log(getid);
+//        if (typeof Cookies.get('shoppingCart') == 'undefined'){
+//            shoppingCart = [getid];
+//            
+//        }else{
+//            var added = false;
+//            var oldShoppingCart = Cookies.getJSON('shoppingCart');
+//            for (i = 0; i < oldShoppingCart.length; i++) {
+//                
+//                            if (oldShoppingCart[i] == getid) {
+//                                console.log(oldShoppingCart[i]);
+//                                shoppingCart = oldShoppingCart;
+//                                added = true;
+//                                break;
+//                            } 
+//                        }if(!added){
+//                            oldShoppingCart.push(getid);
+//                            shoppingCart = oldShoppingCart;
+//                        }
+//            
+//        }
+//        Cookies.set('shoppingCart',shoppingCart);
+////        
+//        
+//        var cart = $('#shopping-cart');
+//        var imgtodrag = $(this).parent('.image').find("img").eq(0);
+//
+//        if (imgtodrag) {
+//            var imgclone = imgtodrag.clone()
+//                .offset({
+//                    top: imgtodrag.offset().top,
+//                    left: imgtodrag.offset().left
+//                })
+//                .css({
+//                    'opacity': '0.5',
+//                    'position': 'absolute',
+//                    'height': '150px',
+//                    'width': '150px',
+//                    'z-index': '100'
+//                })
+//                .appendTo($('body'))
+//                .animate({
+//                    'top': cart.offset().top + 10,
+//                    'left': cart.offset().left + 10,
+//                    'width': 75,
+//                    'height': 75
+//                }, 1000, 'easeInOutExpo');
+//
+//            setTimeout(function () {
+//                cart.effect("shake", {
+//                    times: 3
+//                }, 200);
+//            }, 1200);
+//
+//            imgclone.animate({
+//                'width': 0,
+//                'height': 0
+//            }, function () {
+//                $(this).detach()
+//            });
+//        }
+//    });
+    
+    var goShoppingCart = function (element) {
         var shoppingCart;
-        var getid = $(this).parent('.image').find('.itemId').val();
+        var getid = element.parent('.image').find('.itemId').val();
         console.log(getid);
         if (typeof Cookies.get('shoppingCart') == 'undefined'){
             shoppingCart = [getid];
@@ -173,7 +216,7 @@
 //        
         
         var cart = $('#shopping-cart');
-        var imgtodrag = $(this).parent('.image').find("img").eq(0);
+        var imgtodrag = element.parent('.image').find("img").eq(0);
 
         if (imgtodrag) {
             var imgclone = imgtodrag.clone()
@@ -209,7 +252,7 @@
                 $(this).detach()
             });
         }
-    });
+    }
 </script>
 
 </html>
